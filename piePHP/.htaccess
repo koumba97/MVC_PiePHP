@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /piePHP/
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{REQUEST_URI} !^/Applications/MAMP/Sites/piePHP/(webroot/.+|index.php|robots.txt)$
+RewriteCond %{REQUEST_URI} !^/Applications/MAMP/Sites/piePHP/(Core/.+|index.php|robots.txt)$
+RewriteRule ^ src/View/User/index.php [QSA,L]
