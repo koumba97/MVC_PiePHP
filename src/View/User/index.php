@@ -5,7 +5,6 @@
     $app = new Core\Core();
     $app -> run();
 
-
 ?>
 
 

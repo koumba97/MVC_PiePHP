@@ -1,3 +1,3 @@
 <?php
-echo "okok";
-//Router::connect('/user/add', ['controller' => 'user', 'action' => 'add']);
+//Router::connect('/', ['controller' => 'app', 'action' => 'index']);
+//Router::connect('/', ['controller' => 'user', 'action' => 'add']);

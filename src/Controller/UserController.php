@@ -8,7 +8,7 @@ class userController{
     }
 
     public function addAction(){
-        echo __CLASS__ . " [OK]" . "<br>" ;
+        $myArray=['Controller' => 'User', 'Action' => 'Add'];
         
     }
 }
