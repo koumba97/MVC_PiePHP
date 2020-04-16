@@ -1,22 +1,18 @@
 <?php
 namespace Core;
-class Router{
+
+class Router extends Controller{
+
 
     private static $routes;
-
     public static function connect($url, $route){
-
         self::$routes[$url] = $route;
+       
     }
 
     public static function get($url){
-   
-        // if (isset(self::$routes[$url])) {
-		// 	return self::$routes[$url];
-        // } 
-        // else {
-		// 	return ['controller' => 'error', 'action' => 'error'];
-		// }
+ 
+        return self::$routes;
+        
     }
-
 }

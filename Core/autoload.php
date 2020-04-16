@@ -2,7 +2,6 @@
 
 
 function autoloader($class_name) {
-   
     $class_name = str_replace('\\', DIRECTORY_SEPARATOR, $class_name);
 
     $core_file= '../../..';
