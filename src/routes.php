@@ -1,4 +1,4 @@
 <?php
-//include '../../../Core/Router.php';
-Core\Router::connect('MVC_PiePHP/', ['controller' => 'app', 'action' => 'index']);
-Core\Router::connect('MVC_PiePHP/', ['controller' => 'user', 'action' => 'add']);
+include '../../../Core/Router.php';
+Router::connect('/', ['controller' => 'app', 'action' => 'index']);
+Router::connect('/register', ['controller' => 'user', 'action' => 'add']);

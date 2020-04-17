@@ -1,38 +1,35 @@
-<?php 
+<?php
 namespace Core;
 
 class Core{
+
 
     public function run(){
 
         echo __CLASS__ . " [OK]" . "<br>";
         $url= str_replace(BASE_URI, '', $_SERVER['REQUEST_URI']);
- 
-        include '../../../src/routes.php';
-        //include '../../../src/Controller/UserController.php';
-        //include '../../../src/Controller/AppController.php';
-  
+
 
         $array_url = explode(' ', str_replace('/', ' ', $url));
 
-        if( ($array_url[2]!=="") && ($array_url[2]=="register") ){
-            $myRoute=\Router::get($url)['/register'];
+        print_r($array_url);
+        if( ($array_url[2]!=="") && ($array_url[3]!=="") ){
+            $myArray=['Controller'=> $array_url[2], 'Action'=> $array_url[3]];
         }
         else{
-            $myRoute=\Router::get($url)['/'];
+            $myArray=['Controller'=> 'app', 'Action'=> 'index'];
         }
 
 
-        $myController = $myRoute['controller'].'Controller';
-        $myAction = $myRoute['action'].'Action';
-       
+        $myController = $myArray['Controller'].'Controller';
+        $myAction = $myArray['Action'].'Action';
+
 
         if (class_exists($myController)){
 
             if(method_exists($myController, $myAction)){
                 $instance = new $myController();
                 $instance->$myAction();
-         
             }
             else{
                 echo "error 404 - method not found";
@@ -41,6 +38,10 @@ class Core{
         else{
             echo "error 404 - class not found";
         }
+
+
     }
+
+
 }
 

@@ -1,6 +1,4 @@
 <?php 
-namespace Controller;
-use \Core\Controller;
 
 class userController{
 
@@ -10,13 +8,6 @@ class userController{
 
     public function addAction(){
         echo "hey ! voici le contenu de la méthode addAction" . PHP_EOL;
-        
     }
-
-    public function indexAction(){
-        echo "manque de parametre";
-        
-    }
-
 
 }

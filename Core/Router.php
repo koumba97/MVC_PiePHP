@@ -1,7 +1,6 @@
 <?php
-namespace Core;
 
-class Router extends Controller{
+class Router{
 
 
     private static $routes;
@@ -11,8 +10,6 @@ class Router extends Controller{
     }
 
     public static function get($url){
- 
         return self::$routes;
-        
     }
 }
