@@ -9,8 +9,6 @@ class Core{
         $url= str_replace(BASE_URI, '', $_SERVER['REQUEST_URI']);
  
         include '../../../src/routes.php';
-        //include '../../../src/Controller/UserController.php';
-        //include '../../../src/Controller/AppController.php';
   
 
         $array_url = explode(' ', str_replace('/', ' ', $url));
