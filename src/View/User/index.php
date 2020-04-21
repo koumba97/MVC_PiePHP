@@ -16,8 +16,10 @@
         <title>Index</title>
     </header>
     
+
     <body>
 
+        <?php //include('../../../src/View/User/register.php'); ?>
         <pre>
             POST
             <?php print_r($_POST); ?>

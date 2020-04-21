@@ -5,7 +5,12 @@ class appController{
         echo __CLASS__ . " [OK]" . "<br>" ;
     }
     public function indexAction(){
-        echo "coucou ! voici le contenu de la méthode indexAction";
+        if (isset($_POST['email'])){
+            echo "bonjour ".$_POST['email'];
+        }
+        else{
+            echo "bonjour, connecte-toi <a href='login'>ici</a>";
+        }
     }
 
 }

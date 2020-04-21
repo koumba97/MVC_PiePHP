@@ -1,6 +1,13 @@
 <?php 
+//namespace Controller;
+include('../../../Core/Controller.php');
 
-class userController{
+class userController extends Controller{
+
+    public function __construct(){
+        //$request = new Request();
+        //$request->__construct();
+    }
 
     public function run(){
         echo __CLASS__ . " [OK]" . "<br>" ;
@@ -11,15 +18,31 @@ class userController{
     }
 
     public function registerAction(){
+
+        $this->render("register");
+
+        if (isset($_POST['name'])  && isset($_POST['surname']) && isset($_POST['email']) && isset($_POST['password'])){
         $email=$_POST['email'];
         $password=$_POST['password'];
-
-        if (isset($email) && isset($password)){
-            echo "ok";
+        
+         
             $saveData = new userModel($email, $password);
             $saveData->save();
-            //$this->render("login");
+            
+            
         }
+    }
+
+    public function loginAction() {
+
+        $this->render("login");
+       
+    }
+
+
+    public function showAction($id) {
+        echo " ID de l' utilisateur a afficher : $id " . PHP_EOL ;
+       
     }
 
 }

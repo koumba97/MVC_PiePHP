@@ -13,8 +13,13 @@ class Core{
 
         $array_url = explode(' ', str_replace('/', ' ', $url));
 
-        if( ($array_url[2]!=="") && ($array_url[2]=="register") ){
-            $myRoute=\Router::get($url)['/register'];
+        if( ($array_url[2]!=="")){
+            if(!isset(\Router::get($url)["/$array_url[2]"])){
+                $myRoute=\Router::get($url)['/'];
+            }
+            else{
+                $myRoute=\Router::get($url)["/$array_url[2]"];
+            }
         }
         else{
             $myRoute=\Router::get($url)['/'];
