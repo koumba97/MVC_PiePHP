@@ -9,6 +9,7 @@
     </head>
     
     <body>
+        
         <?=$view ?>
     </body>
 </html>

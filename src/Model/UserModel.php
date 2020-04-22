@@ -7,6 +7,7 @@ class userModel{
 
     private $email;
     private $password;
+    private $data;
     
 
     public function __construct($email, $password)
@@ -18,8 +19,9 @@ class userModel{
     }
     public function save(){
         
-        $this->pdo->query("SELECT * FROM user WHERE email = '" . $this->email . "'");
-        if ($this->data->fetchColumn() > 0) {
+        $this->data = $this->bdd->query("SELECT * FROM user WHERE email = '" . $this->email . "'");
+
+        if ($this->data->fetchColumn() > 0){
             echo "veuillez saisir une autre adresse email";
         }
         else{
@@ -32,24 +34,28 @@ class userModel{
 
     }
 
-    public function read(){
+    public function read($id){
         
-        //SELECT
-        $this->bdd->exec();
+        $select_data = $this->bdd->query("SELECT * FROM user WHERE id=$id");
+        while($result = $select_data->fetch()){
+            echo $id=$result['id'] . " " . $email=$result['email'] . " " . $password=$result['password'];
+        }
+
     }
 
     
-    public function update(){
-        
-        //UPDATE
-        $this->bdd->exec();
+    public function update($update_email, $update_password, $id){
+
+        $data_update= $this->bdd->prepare("UPDATE user SET email=$update_email, password=$update_password WHERE id =$id");
+        $data_update->execute();
+
     }
 
 
-    public function delete(){
+    public function delete($id){
+
+        $this->bdd->exec("DELETE FROM 'user' WHERE id=$id"); 
         
-        //DELETE
-        $this->bdd->exec();
     }
 
 }

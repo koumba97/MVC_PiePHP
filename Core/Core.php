@@ -13,6 +13,15 @@ class Core{
 
         $array_url = explode(' ', str_replace('/', ' ', $url));
 
+        // Router dynamique
+        // if( ($array_url[2]!=="") && ($array_url[3]!=="") ){
+        //     $myArray=['Controller'=> $array_url[2], 'Action'=> $array_url[3]];
+        // }
+        // else{
+        //     $myArray=['Controller'=> 'app', 'Action'=> 'index'];
+        // }
+
+
         if( ($array_url[2]!=="")){
             if(!isset(\Router::get($url)["/$array_url[2]"])){
                 $myRoute=\Router::get($url)['/'];

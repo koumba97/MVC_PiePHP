@@ -5,8 +5,7 @@ include('../../../Core/Controller.php');
 class userController extends Controller{
 
     public function __construct(){
-        //$request = new Request();
-        //$request->__construct();
+ 
     }
 
     public function run(){
@@ -36,6 +35,15 @@ class userController extends Controller{
     public function loginAction() {
 
         $this->render("login");
+       
+    }
+
+    public function logoutAction() {
+
+        $_SESSION=array();
+        session_destroy();
+        header('Location: index');
+        //$this->render("login");
        
     }
 
