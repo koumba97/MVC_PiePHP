@@ -14,7 +14,6 @@ class userModel{
     {
         $this->email = $email;
         $this->password = $password;
-        //$request = new Request();
         $this->bdd = new PDO('mysql:host=localhost;dbname=Pie_PHP;charset=utf8', 'root', 'root');
     }
     public function save(){

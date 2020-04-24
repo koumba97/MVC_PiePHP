@@ -53,6 +53,18 @@ class Core{
         else{
             echo "error 404 - class not found";
         }
+
+
+
+        $orm = new ORM();
+        $orm -> create('articles', array(
+        'title' => "j'ai un super titre" ,
+        'content' => 'et voici une super article de blog',
+        'author' => 'Koum'
+        ));
+
+        
+        //$orm -> read('articles', 3);
     }
 }
 
