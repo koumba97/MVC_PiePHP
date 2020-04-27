@@ -9,6 +9,7 @@ class Database{
         }
         
         catch(PDOException $error){
+           
             echo $error->getMessage();
         }
     }

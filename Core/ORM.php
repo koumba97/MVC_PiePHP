@@ -11,6 +11,7 @@ class ORM extends Database{
         $all_fields=array();
         $all_val=array();
         
+        
         for($i=0 ; $i<count($fields) ; $i++){
             array_push($all_fields, array_keys($fields)[$i]);
             array_push($all_val, $fields[array_keys($fields)[$i]]);
@@ -18,12 +19,15 @@ class ORM extends Database{
         
         $fields_names= str_replace(' ', ', ', implode($all_fields, ' '));
        
+
         $all_values=array();
         foreach ($all_val as $value){
             array_push($all_values, '"'.$value.'"');
         }
 
+
         $fields_values= str_replace('_ESPACE_', ', ', implode($all_values, '_ESPACE_'));
+
 
         $this->bdd->exec("INSERT INTO $table ($fields_names)
         VALUES($fields_values)"); 
@@ -34,6 +38,7 @@ class ORM extends Database{
 
     public function read($table, $id){
     
+       
         //$this->query("SELECT * FROM $table WHERE id=$id");
         //return $this->fetch();
     } 
