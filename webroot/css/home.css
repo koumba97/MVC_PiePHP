@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "cocogoose";
+  src: url("font/cocogoose.ttf");
+}
+@font-face {
+  font-family: "bebas";
+  src: url("font/BebasNeue-Regular.ttf");
+}
+@font-face {
+  font-family: "RoundedBold";
+  src: url("font/Rounded-Bold.otf") format "truetype";
+}
+@font-face {
+  font-family: "Rounded-Light";
+  src: url("/font/Rounded-Light.otf");
+}
+body {
+  margin: 0px;
+  background: linear-gradient(#000000, #3e3e3e);
+}
+body .view_contents {
+  display: flex;
+}
+body .view_contents .view {
+  padding: 20px;
+}
+body .menu-contents {
+  width: 100%;
+}
+body nav {
+  font-family: bebas;
+  background-color: rgba(0, 0, 0, 0.441);
+  margin: 0px;
+  height: 40px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+body nav .button {
+  font-family: Montserrat;
+  color: white;
+  border: solid 1px;
+  line-height: 30px;
+  height: 30px;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 8px;
+  float: right;
+}
+body nav a {
+  text-decoration: none;
+  color: #ffcc00;
+  font-family: Montserrat;
+  font-size: 12px;
+  line-height: 30px;
+}
+body .side_bar {
+  border: solid;
+  height: 700px;
+  width: 180px;
+  background-color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+body .side_bar .logo {
+  margin: 0px;
+  font-family: bebas;
+  font-size: 25px;
+  color: white;
+}
+body .side_bar a {
+  text-decoration: none;
+}
+body .side_bar .search_section {
+  background-color: #c4c4c4;
+  color: white;
+  border-radius: 50px;
+  padding: 5px;
+  width: 140px;
+  height: max-content;
+}
+body .side_bar .search_section input {
+  background-color: transparent;
+  border: none;
+  width: 100px;
+}
+body .side_bar .search_section button {
+  background-color: transparent;
+  border: none;
+}
+body .form_login {
+  border: solid 1px white;
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  background-color: #1c1c1c;
+  font-family: Montserrat;
+  color: white;
+}
+body .form_login p {
+  font-size: 10px;
+  text-align: center;
+}
+body .form_login h2 {
+  font-family: bebas;
+  color: white;
+  text-align: center;
+}
+body .form_login input[type=submit] {
+  background-color: #ffcc00;
+  border: none;
+  font-family: bebas;
+  margin: auto;
+}
+body .form_login .p2 {
+  color: #727272;
+  font-size: 10px;
+  padding: 10px;
+  border-top: 1px solid white;
+}
+body .form_login a {
+  text-decoration: none;
+  color: white;
+  font-family: bebas;
+  text-align: center;
+  border: solid;
+}
+
+/*# sourceMappingURL=home.css.map */

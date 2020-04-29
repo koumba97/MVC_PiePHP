@@ -13,27 +13,28 @@
 <html>
     <header>
         <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="../../webroot/css/home.css">
         <title>Index</title>
     </header>
     
 
     <body>
-
-        <?php //include('../../../src/View/User/register.php'); ?>
+<!-- 
+       
         <pre>
             POST
-            <?php print_r($_POST); ?>
+            <?php //print_r($_POST); ?>
         </pre>
 
         <pre>
             GET
-            <?php print_r($_GET); ?>
+            <?php //print_r($_GET); ?>
         </pre>
 
         <pre>  
             SERVER
-            <?php print_r($_SERVER); ?>
-        </pre>
+            <?php //print_r($_SERVER); ?>
+        </pre> -->
     </body>
 
 </html>

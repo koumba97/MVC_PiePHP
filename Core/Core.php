@@ -5,7 +5,7 @@ class Core{
 
     public function run(){
 
-        echo __CLASS__ . " [OK]" . "<br>";
+        //echo __CLASS__ . " [OK]" . "<br>";
         $url= str_replace(BASE_URI, '', $_SERVER['REQUEST_URI']);
  
         include '../../../src/routes.php';

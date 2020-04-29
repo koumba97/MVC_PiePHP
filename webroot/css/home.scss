@@ -1,0 +1,171 @@
+@font-face{
+    font-family: "cocogoose";
+    src: url("font/cocogoose.ttf");
+}
+
+@font-face{
+    font-family: "bebas";
+    src: url("font/BebasNeue-Regular.ttf");
+}
+
+@font-face {
+    font-family: "RoundedBold";
+    src: url("font/Rounded-Bold.otf") format ('truetype');
+}
+
+@font-face {
+   font-family: "Rounded-Light";
+   src: url("/font/Rounded-Light.otf");
+}
+
+$yellow:rgb(255, 204, 0);
+
+
+body{
+
+    margin: 0px;
+    background: linear-gradient(#000000, #3e3e3e);
+
+    .view_contents{
+        display: flex;
+
+        .view{
+            padding: 20px;
+            
+        }
+    }
+
+    .menu-contents{
+        width: 100%;
+    }
+
+
+    ///////////////////////////////NAV
+    nav{
+        font-family: bebas;
+        background-color: rgba(0, 0, 0, 0.441);
+        margin: 0px;
+        height: 40px;
+
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+
+        .button{
+            font-family: Montserrat;
+            color:white;
+            border: solid 1px;
+            line-height: 30px;
+            height: 30px;
+            text-align: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 8px;
+            float: right;
+        }
+
+        a{
+            text-decoration: none;
+            color: $yellow;
+            font-family: Montserrat;
+            font-size: 12px;
+            line-height: 30px;
+        }
+
+        
+    }
+
+    .side_bar{
+        border: solid;
+        height: 700px;
+        width: 180px;
+        background-color: black;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        .logo{
+            margin: 0px;
+            font-family: bebas;
+            font-size: 25px;
+            color: white;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .search_section{
+            background-color: rgb(196, 196, 196);
+            color: white;
+            border-radius: 50px;
+            padding: 5px;
+            width: 140px;
+            height: max-content;
+
+            input{
+                background-color: transparent;
+                border: none;
+                width: 100px;
+            }
+
+            button{
+                background-color: transparent;
+                border: none;
+            }
+        }
+    }
+
+
+
+
+    ////////////////LOGIN
+    .form_login{
+        border: solid 1px white;
+        width: 300px;
+        margin: auto;
+        padding: 20px;
+        background-color: rgb(28, 28, 28);
+        font-family: Montserrat;
+        
+        color: white;
+
+        p{
+            font-size: 10px;
+            text-align: center;
+        }
+
+        h2{
+            font-family: bebas;
+            color: white;
+            text-align: center;
+        }
+
+        input[type="submit"]{
+            //border-radius: 50px;
+            background-color: $yellow;
+            border: none;
+            font-family: bebas;
+            margin: auto;
+
+        }
+
+        .p2{
+            color: #727272;
+            font-size: 10px;
+            padding: 10px;
+            border-top: 1px solid white;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            font-family: bebas;
+            text-align: center;
+            border: solid;
+            
+        }
+
+    }
+
+}
+
+

@@ -24,7 +24,6 @@ function autoloader($class_name) {
     elseif(file_exists("$model_file/$class_name.php")){
         include("$model_file/$class_name.php");
     }
-    echo $class_name . "<br>";
     
 }
 

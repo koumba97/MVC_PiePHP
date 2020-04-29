@@ -1,17 +1,14 @@
-<!DOCTYPE HTML>
-<html>
-    <header>
-        <meta charset="UTF-8" />
-        <title>Login</title>
-    </header>
-    
-    <body>
-        <form method="POST" action="index">
-            <h2>LOGIN</h2>
+
+        <form method="POST" action="" class="form_login">
+            <h2>CONNECTE - TOI</h2>
             <p>email : <input type="email" name="email"></p>
             <p> mot de passe : <input type="password" name="password"></p>
-            <input type="submit">
-        </form>
-    </body>
+            <div style="width:100%; text-align:center;">
 
-</html>
+                <input type="submit"/>
+            </div>
+
+            <p class="p2">Pas de compte ?</p>
+            <a href="../MVC_PiePHP/register">Inscris-toi</a>
+        </form>
+  

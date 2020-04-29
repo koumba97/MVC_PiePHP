@@ -8,9 +8,10 @@ class userController extends Controller{
 
     public $params;
     public $request;
+
     public function __construct(){
-        // $request= new Request();
-        // $this->request= $request;
+
+        $this->bdd = new \PDO('mysql:host=localhost;dbname=Pie_PHP;charset=utf8', 'root', 'root');
         
     }
 
@@ -25,20 +26,27 @@ class userController extends Controller{
     public function registerAction(){
 
         $this->render("register");
-        
 
         if (isset($_POST['name'])  && isset($_POST['surname']) && isset($_POST['email']) && isset($_POST['password'])){
             
             $email=$_POST['email'];
             $password=$_POST['password'];
+            $name=$_POST['name'];
+            $surname=$_POST['surname'];
+
    
-            $data = array("email" => $email, "password" => $password);
-            $this->request= new Request($data);
+            $params = array("email"=>$email, "password"=>$password, "name"=>$name, "surname"=>$surname);
+            $this->request= new Request($params);
+            
             $params = $this->request->getQueryParams();
-          
-            echo "params(".$params.")";
-            $saveData = new Model\userModel($email, $password);
-            $saveData->save();  
+            $user = new Model\userModel($params);
+            
+            //if(!$user->id){
+
+                $user->save();
+            //}
+            //self::$_render = " Votre compte a ete cree ." . PHP_EOL ;
+             
             
         }
     }
@@ -46,6 +54,28 @@ class userController extends Controller{
     public function loginAction() {
 
         $this->render("login");
+
+        if (isset($_POST['email']) && isset($_POST['password'])){
+            
+            $email=$_POST['email'];
+            $password=$_POST['password'];
+
+            $login = $this->bdd->query("SELECT * FROM user WHERE email='$email'");
+            foreach($login as $content){
+                $password_check=$content['password'];
+            }
+
+            if($password==$password_check){
+                echo "connexion réussie";
+            }
+
+            else{
+                echo "Mot de passe incorrect";
+            }
+
+
+        }
+
        
     }
 
@@ -55,7 +85,8 @@ class userController extends Controller{
         session_destroy();
         header('Location: index');
         //$this->render("login");
-       
+
+      
     }
 
 
