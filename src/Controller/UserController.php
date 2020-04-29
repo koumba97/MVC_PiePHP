@@ -1,11 +1,17 @@
 <?php 
 //namespace Controller;
-include('../../../Core/Controller.php');
+
+use \Core\Controller;
+use \Core\Request;
 
 class userController extends Controller{
 
+    public $params;
+    public $request;
     public function __construct(){
- 
+        // $request= new Request();
+        // $this->request= $request;
+        
     }
 
     public function run(){
@@ -19,15 +25,20 @@ class userController extends Controller{
     public function registerAction(){
 
         $this->render("register");
+        
 
         if (isset($_POST['name'])  && isset($_POST['surname']) && isset($_POST['email']) && isset($_POST['password'])){
-        $email=$_POST['email'];
-        $password=$_POST['password'];
-        
-         
-            $saveData = new userModel($email, $password);
-            $saveData->save();
             
+            $email=$_POST['email'];
+            $password=$_POST['password'];
+   
+            $data = array("email" => $email, "password" => $password);
+            $this->request= new Request($data);
+            $params = $this->request->getQueryParams();
+          
+            echo "params(".$params.")";
+            $saveData = new Model\userModel($email, $password);
+            $saveData->save();  
             
         }
     }

@@ -1,6 +1,6 @@
 <?php
-//namespace Model;
-include('../../../Core/Request.php');
+namespace Model;
+
 
 
 class userModel{
@@ -14,7 +14,7 @@ class userModel{
     {
         $this->email = $email;
         $this->password = $password;
-        $this->bdd = new PDO('mysql:host=localhost;dbname=Pie_PHP;charset=utf8', 'root', 'root');
+        $this->bdd = new \PDO('mysql:host=localhost;dbname=Pie_PHP;charset=utf8', 'root', 'root');
     }
     public function save(){
         

@@ -56,15 +56,25 @@ class Core{
 
 
 
-        $orm = new ORM();
-        $orm -> create('articles', array(
-        'title' => "j'ai un super titre" ,
-        'content' => 'et voici une super article de blog',
-        'author' => 'Koum'
-        ));
+        //$orm = new ORM();
+        // $orm -> create('articles', array(
+        // 'title' => "j'ai un super titre" ,
+        // 'content' => 'et voici une super article de blog',
+        // 'author' => 'Koum Koum'
+        // ));
 
+        //$orm -> read('articles', 10);
+
+        // $orm -> update('articles', 1, array(
+        // 'title' => "j'ai un super titre" ,
+        // 'content' => 'et voici une super article de blog',
+        // 'author' => 'Koum Koum'
+        // ));
+
+        //$orm -> delete('articles', 14);
+
+        //$entity= new Entity();
         
-        //$orm -> read('articles', 3);
     }
 }
 
