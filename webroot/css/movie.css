@@ -1,0 +1,51 @@
+.details_movie .background {
+  width: 105%;
+  height: 300px;
+  position: relative;
+  bottom: 20px;
+  right: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.details_movie .affiche-text {
+  position: relative;
+  bottom: 170px;
+  display: flex;
+  justify-content: space-between;
+}
+.details_movie .affiche-text .affiche {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 230px;
+  height: 330px;
+}
+.details_movie .affiche-text .text {
+  color: white;
+  font-family: Montserrat;
+  width: 50%;
+  position: relative;
+  bottom: 20px;
+}
+.details_movie .affiche-text .text .title {
+  font-size: 30px;
+  position: relative;
+  top: 20px;
+}
+.details_movie .affiche-text .text .resum {
+  font-size: 13px;
+}
+.details_movie .affiche-text .text .voir {
+  color: white;
+  font-family: Montserrat;
+  font-size: 15px;
+  text-align: center;
+  background: yellowgreen;
+  height: 20px;
+  width: 70px;
+  padding: 5px;
+  border-radius: 20px;
+  margin-top: 30px;
+  float: right;
+}
+
+/*# sourceMappingURL=movie.css.map */

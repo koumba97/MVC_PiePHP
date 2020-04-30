@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "cocogoose";
+  src: url("font/cocogoose.ttf");
+}
+@font-face {
+  font-family: "bebas";
+  src: url("font/BebasNeue-Regular.ttf");
+}
+@font-face {
+  font-family: "RoundedBold";
+  src: url("font/Rounded-Bold.otf") format "truetype";
+}
+@font-face {
+  font-family: "Rounded-Light";
+  src: url("/font/Rounded-Light.otf");
+}
+.profil {
+  width: 100%;
+}
+.profil .profil_background {
+  position: relative;
+  bottom: 20px;
+  right: 20px;
+  width: 105%;
+  height: 130px;
+}
+.profil .name {
+  color: white;
+  font-family: Montserrat;
+  font-size: 40px;
+  position: relative;
+  bottom: 20px;
+}
+.profil .form_profil {
+  width: 100%;
+  color: white;
+  font-family: Montserrat;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.profil .form_profil .profil_picture {
+  height: 170px;
+  width: 150px;
+  background-image: url("../assets/blank.png");
+  background-size: cover;
+  background-position: 50%;
+}
+.profil .form_profil .section_form {
+  width: 70%;
+  position: relative;
+}
+.profil .form_profil .section_form .password {
+  border-top: solid 1px white;
+  width: 320px;
+  margin-top: 40px;
+}
+.profil .form_profil .section_form .password p {
+  line-height: 20px;
+}
+.profil .form_profil .section_form .password input {
+  float: right;
+  border: none;
+  height: 22px;
+  width: 150px;
+}
+.profil .form_password {
+  color: white;
+  font-family: Montserrat;
+  font-size: 12px;
+}
+.profil .form_password .password {
+  border-top: solid 1px white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.profil .form_password .password p {
+  line-height: 20px;
+}
+.profil .form_password .password input {
+  border: none;
+  height: 22px;
+  width: 150px;
+}
+.profil .form_delete {
+  color: white;
+  font-family: Montserrat;
+  font-size: 12px;
+}
+.profil .form_delete .password {
+  border-top: solid 1px white;
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.profil .form_delete .password p {
+  line-height: 20px;
+}
+.profil .form_delete .password input {
+  border: none;
+  height: 22px;
+  width: 150px;
+}
+.profil .form_delete .password .delete {
+  float: right;
+}
+.profil .identity {
+  width: 320px;
+}
+.profil .identity p {
+  line-height: 20px;
+}
+.profil .identity input {
+  float: right;
+  border: none;
+  height: 22px;
+  width: 150px;
+}
+.profil .confirm {
+  background-color: yellowgreen;
+  padding: 7px;
+  border-radius: 20px;
+  color: white;
+  border: none;
+  position: relative;
+  left: 170px;
+  top: 10px;
+}
+.profil .delete {
+  background-color: #cd3232;
+  padding: 7px;
+  border-radius: 20px;
+  color: white;
+  border: none;
+}
+
+/*# sourceMappingURL=profil.css.map */

@@ -20,11 +20,15 @@
 
 $yellow:rgb(255, 204, 0);
 
+a{
+    text-decoration: none;
+}
+
 
 body{
 
     margin: 0px;
-    background: linear-gradient(#000000, #3e3e3e);
+    background: linear-gradient(#151515, #0c0c0c);
 
     .view_contents{
         display: flex;
@@ -43,13 +47,15 @@ body{
     ///////////////////////////////NAV
     nav{
         font-family: bebas;
-        background-color: rgba(0, 0, 0, 0.441);
+        background-color: rgba(0, 0, 0, 0.749);
         margin: 0px;
         height: 40px;
-
+        color: white;
         padding: 15px;
         display: flex;
         justify-content: space-between;
+        position: -webkit-sticky;
+        position: sticky;
 
         .button{
             font-family: Montserrat;
@@ -72,6 +78,14 @@ body{
             line-height: 30px;
         }
 
+        .hello{
+            color: white;
+            font-family: Montserrat;
+            font-size: 12px;
+            position: relative;
+            bottom: 5px;
+        }
+
         
     }
 
@@ -80,12 +94,12 @@ body{
         height: 700px;
         width: 180px;
         background-color: black;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
 
         .logo{
             margin: 0px;
-            font-family: bebas;
+            font-family: Montserrat;
             font-size: 25px;
             color: white;
         }
@@ -95,24 +109,189 @@ body{
         }
 
         .search_section{
-            background-color: rgb(196, 196, 196);
+            background-color: transparent;
             color: white;
-            border-radius: 50px;
-            padding: 5px;
-            width: 140px;
-            height: max-content;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            padding: 10px;
+            width: 135px;
+            height: 20px;
+            transition-duration: 1s;
+
+            &:hover{
+                background-color: rgb(65, 65, 65);
+            }
 
             input{
                 background-color: transparent;
                 border: none;
-                width: 100px;
+                width: 90px;
+                position: relative;
+                bottom: 2px;
+            }
+
+            i{
+                font-size: 20px;
+                color: rgb(172, 172, 172);
+                position: relative;
+                left: 10px;
+            }
+            ::placeholder{
+                color: rgb(165, 165, 165);
+                position: relative;
+                font-family: Montserrat;
+                
             }
 
             button{
                 background-color: transparent;
                 border: none;
             }
+
+           
         }
+
+        .sidebar_link{
+            background-color: transparent;
+            color: rgb(172, 172, 172);
+            border-radius: 5px;
+            padding: 10px;
+            width: 130px;
+            height: 20px;
+            font-family: Montserrat;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding-right: 15px;
+            transition-duration: 1s;
+
+            &:hover{
+                background-color: rgb(65, 65, 65);
+            }
+
+            i{
+                float: right;
+                color: rgb(172, 172, 172);
+            }
+
+           
+        }
+
+        .historique_section{
+            margin-top: 30px;
+            border-top: solid white 1px;
+            padding-top: 20px;
+            height: 200px;
+
+            h5{
+                color: rgb(172, 172, 172);
+                font-size: 10px;
+                font-family: Montserrat;
+                font-size: 8px;
+                font-weight: 600;
+                margin: 0px;
+                padding-left: 10px;
+            }
+
+            .last_movie{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10px;
+
+
+                .last_movie-affiche{
+                    height: 30px;
+                    width: 30px;
+                    border: solid rgb(172, 172, 172) 1px;
+                    margin-right: 10px;
+                }
+
+                .last_movie-title{
+                    color: rgb(172, 172, 172);
+                    font-family: Montserrat;
+                    float: right;
+                }
+            }
+
+            .plus{
+                color:white;
+                font-size: 6px;
+                float: right;
+                font-family: Montserrat;
+                margin-top: 20px;
+            }
+        }
+
+
+        .heart_section{
+            margin-top: 0px;
+           
+            height: 200px;
+
+            h5{
+                color: rgb(172, 172, 172);
+                font-size: 10px;
+                font-family: Montserrat;
+                font-size: 8px;
+                font-weight: 600;
+                margin: 0px;
+                padding-left: 10px;
+            }
+
+            .heart_movie{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10px;
+
+
+                .heart_movie-affiche{
+                    height: 30px;
+                    width: 30px;
+                    border: solid rgb(172, 172, 172) 1px;
+                    margin-right: 10px;
+                }
+
+                .heart_movie-title{
+                    color: rgb(172, 172, 172);
+                    font-family: Montserrat;
+                    float: right;
+                }
+            }
+
+            .plus{
+                color:white;
+                font-size: 6px;
+                float: right;
+                font-family: Montserrat;
+                margin-top: 20px;
+            }
+        }
+
+        .ajout_film{
+            display: flex;
+            .add{
+                background: linear-gradient(#fc4aff, #4037df);
+                height: 30px;
+                width: 30px;
+
+                color: white;
+                i{
+                    position: relative;
+                    left: 8px;
+                    top: 6px;
+                }
+            }
+
+            p{
+                color: white;
+                font-family: Montserrat;
+                font-size: 10px;
+                margin-left: 10px;
+            }
+        }
+
     }
 
 
@@ -135,16 +314,17 @@ body{
         }
 
         h2{
-            font-family: bebas;
+            font-family: Montserrat;
             color: white;
             text-align: center;
         }
 
         input[type="submit"]{
             //border-radius: 50px;
-            background-color: $yellow;
-            border: none;
-            font-family: bebas;
+            background-color: transparent;
+            color: white;
+            border: solid 1px white;
+            font-family: Montserrat;
             margin: auto;
 
         }
@@ -158,9 +338,10 @@ body{
         a{
             text-decoration: none;
             color: white;
-            font-family: bebas;
+            font-family: Montserrat;
             text-align: center;
-            border: solid;
+            font-size: 17px;
+            width: 300px;
             
         }
 
@@ -169,3 +350,43 @@ body{
 }
 
 
+/////HOME
+.movies_contener{
+
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    //border: solid white;
+    overflow: scroll;
+    .movie{
+        width: 200px;
+        margin: 10px;
+        .affiche{
+            height: 120px;
+            background-color: white;
+            width: 200px;
+            background-size: cover;
+            background-repeat: no-repeat;
+    
+        }
+    
+        .title_eval{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .title{
+                color: white;
+                font-family: Montserrat;
+                font-size: 12px;
+            }
+        
+            .evaluation{
+                i{
+                    font-size: 8px;
+                    color:$yellow;
+                }
+            }
+        }
+    
+    }
+}

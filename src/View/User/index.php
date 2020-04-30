@@ -13,7 +13,7 @@
 <html>
     <header>
         <meta charset="UTF-8" />
-        <link rel="stylesheet" type="text/css" href="../../webroot/css/home.css">
+        
         <title>Index</title>
     </header>
     

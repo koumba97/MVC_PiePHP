@@ -1,5 +1,5 @@
 <?php 
-//namespace Controller;
+session_start();
 
 use \Core\Controller;
 use \Core\Request;
@@ -8,6 +8,7 @@ class userController extends Controller{
 
     public $params;
     public $request;
+    public $id;
 
     public function __construct(){
 
@@ -39,7 +40,7 @@ class userController extends Controller{
             $this->request= new Request($params);
             
             $params = $this->request->getQueryParams();
-            $user = new Model\userModel($params);
+            $user = new Model\userModel('user', $params);
             
             //if(!$user->id){
 
@@ -58,19 +59,28 @@ class userController extends Controller{
         if (isset($_POST['email']) && isset($_POST['password'])){
             
             $email=$_POST['email'];
-            $password=$_POST['password'];
+            $password=sha1($_POST['password']);
 
             $login = $this->bdd->query("SELECT * FROM user WHERE email='$email'");
             foreach($login as $content){
                 $password_check=$content['password'];
+                $id=$content['id'];
+                $email=$content['email'];
+                $name=$content['name'];
+                $surname=$content['surname'];
             }
 
             if($password==$password_check){
-                echo "connexion réussie";
+                
+                $_SESSION['id']=$id;
+                $_SESSION['email']=$email;
+                $_SESSION['name']=$name;
+                $_SESSION['surname']=$surname;
+                header('location:profil');
             }
 
             else{
-                echo "Mot de passe incorrect";
+            ?><script>alert("Mot de passe incorrect");</script><?php
             }
 
 
@@ -90,9 +100,10 @@ class userController extends Controller{
     }
 
 
-    public function showAction($id) {
-        echo " ID de l' utilisateur a afficher : $id " . PHP_EOL ;
-       
+    public function showAction() {
+        $id=$_SESSION['id'];
+        //echo " ID de l' utilisateur a afficher : $id " . PHP_EOL ;
+        $this->render("profil");
     }
 
 }

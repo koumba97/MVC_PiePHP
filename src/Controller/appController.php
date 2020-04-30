@@ -1,6 +1,7 @@
 <?php
-
+session_start();
 use \Core\Controller;
+
 
 class appController extends Controller{
 
@@ -8,18 +9,11 @@ class appController extends Controller{
         echo __CLASS__ . " [OK]" . "<br>" ;
     }
     public function indexAction(){
-
+        $params="";
+        //$user = new Model\userModel('movie', $params);
+        $user = new Model\movieModel();
+        $user->read_all();
         $this->render("home");
-
-
-        // if (isset($_POST['email'])){
-
-        //     echo "bonjour ".$_POST['email'] . " votre id est "; //$_SESSION['id'];
-        //     echo "<a href='logout'>déconnection</a>";
-        // }
-        // else{
-        //     echo "bonjour, connecte-toi <a href='../../../../MVC_PiePHP/login'>ici</a>";
-        // }
     }
 
 }

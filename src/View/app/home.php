@@ -1,13 +1,8 @@
-<!DOCTYPE HTML>
-<html>
-    <header>
-        <meta charset="UTF-8" />
 
-        <title>Home</title>
-    </header>
-    
-    <body>
-        
-    </body>
+<body>
+<?php //print_r($_SESSION['URL']); ?>
+    <section class="movies_contener">
+        <?php echo $_SESSION['result_home']; ?>
+    </section>
 
-</html>
+</body>

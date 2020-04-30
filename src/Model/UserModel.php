@@ -1,6 +1,6 @@
 <?php
 namespace Model;
-
+@session_start();
 
 
 class userModel{
@@ -11,7 +11,8 @@ class userModel{
     
 
     public function __construct($params)
-    {   $this->params=$params;
+    {   
+        $this->params=$params;
         $this->bdd = new \PDO('mysql:host=localhost;dbname=Pie_PHP;charset=utf8', 'root', 'root');
     }
     public function save(){
@@ -65,5 +66,6 @@ class userModel{
         while($result = $select_data->fetch()){
             echo $id=$result['id'] . " " . $email=$result['email'] . " " . $password=$result['password'];
         }
+  
     }
 }

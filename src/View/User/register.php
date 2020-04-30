@@ -1,20 +1,13 @@
-<!DOCTYPE HTML>
-<html>
-    <header>
-        <meta charset="UTF-8" />
-        <title>Register</title>
-    </header>
-    
-    <body>
-        <form method="POST" action="../../../MVC_PiePHP/register">
-            <h2>REGISTER</h2>
-            <p>nom : <input type="text" name="name"></p>
-            <p>prenom : <input type="text" name="surname"></p>
-     
-            <p>email : <input type="email" name="email"></p>
-            <p> mot de passe : <input type="password" name="password"></p>
-            <input type="submit">
-        </form>
-    </body>
+<form method="POST" action="" class="form_login">
+    <h2>Inscription</h2>
+    <p>nom : <input type="text" name="name"></p>
+    <p>prenom : <input type="text" name="surname"></p>
 
-</html>
+    <p>email : <input type="email" name="email"></p>
+    <p> mot de passe : <input type="password" name="password"></p>
+    
+    <div style="width:100%; text-align:center;">
+        <input type="submit" value="VALIDER"/>
+    </div>
+</form>
+   

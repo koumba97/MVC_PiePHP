@@ -14,9 +14,13 @@
   font-family: "Rounded-Light";
   src: url("/font/Rounded-Light.otf");
 }
+a {
+  text-decoration: none;
+}
+
 body {
   margin: 0px;
-  background: linear-gradient(#000000, #3e3e3e);
+  background: linear-gradient(#151515, #0c0c0c);
 }
 body .view_contents {
   display: flex;
@@ -29,12 +33,15 @@ body .menu-contents {
 }
 body nav {
   font-family: bebas;
-  background-color: rgba(0, 0, 0, 0.441);
+  background-color: rgba(0, 0, 0, 0.749);
   margin: 0px;
   height: 40px;
+  color: white;
   padding: 15px;
   display: flex;
   justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
 }
 body nav .button {
   font-family: Montserrat;
@@ -55,17 +62,24 @@ body nav a {
   font-size: 12px;
   line-height: 30px;
 }
+body nav .hello {
+  color: white;
+  font-family: Montserrat;
+  font-size: 12px;
+  position: relative;
+  bottom: 5px;
+}
 body .side_bar {
   border: solid;
   height: 700px;
   width: 180px;
   background-color: black;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 body .side_bar .logo {
   margin: 0px;
-  font-family: bebas;
+  font-family: Montserrat;
   font-size: 25px;
   color: white;
 }
@@ -73,21 +87,156 @@ body .side_bar a {
   text-decoration: none;
 }
 body .side_bar .search_section {
-  background-color: #c4c4c4;
+  background-color: transparent;
   color: white;
-  border-radius: 50px;
-  padding: 5px;
-  width: 140px;
-  height: max-content;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding: 10px;
+  width: 135px;
+  height: 20px;
+  transition-duration: 1s;
+}
+body .side_bar .search_section:hover {
+  background-color: #414141;
 }
 body .side_bar .search_section input {
   background-color: transparent;
   border: none;
-  width: 100px;
+  width: 90px;
+  position: relative;
+  bottom: 2px;
+}
+body .side_bar .search_section i {
+  font-size: 20px;
+  color: #acacac;
+  position: relative;
+  left: 10px;
+}
+body .side_bar .search_section ::placeholder {
+  color: #a5a5a5;
+  position: relative;
+  font-family: Montserrat;
 }
 body .side_bar .search_section button {
   background-color: transparent;
   border: none;
+}
+body .side_bar .sidebar_link {
+  background-color: transparent;
+  color: #acacac;
+  border-radius: 5px;
+  padding: 10px;
+  width: 130px;
+  height: 20px;
+  font-family: Montserrat;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-right: 15px;
+  transition-duration: 1s;
+}
+body .side_bar .sidebar_link:hover {
+  background-color: #414141;
+}
+body .side_bar .sidebar_link i {
+  float: right;
+  color: #acacac;
+}
+body .side_bar .historique_section {
+  margin-top: 30px;
+  border-top: solid white 1px;
+  padding-top: 20px;
+  height: 200px;
+}
+body .side_bar .historique_section h5 {
+  color: #acacac;
+  font-size: 10px;
+  font-family: Montserrat;
+  font-size: 8px;
+  font-weight: 600;
+  margin: 0px;
+  padding-left: 10px;
+}
+body .side_bar .historique_section .last_movie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+body .side_bar .historique_section .last_movie .last_movie-affiche {
+  height: 30px;
+  width: 30px;
+  border: solid #acacac 1px;
+  margin-right: 10px;
+}
+body .side_bar .historique_section .last_movie .last_movie-title {
+  color: #acacac;
+  font-family: Montserrat;
+  float: right;
+}
+body .side_bar .historique_section .plus {
+  color: white;
+  font-size: 6px;
+  float: right;
+  font-family: Montserrat;
+  margin-top: 20px;
+}
+body .side_bar .heart_section {
+  margin-top: 0px;
+  height: 200px;
+}
+body .side_bar .heart_section h5 {
+  color: #acacac;
+  font-size: 10px;
+  font-family: Montserrat;
+  font-size: 8px;
+  font-weight: 600;
+  margin: 0px;
+  padding-left: 10px;
+}
+body .side_bar .heart_section .heart_movie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+body .side_bar .heart_section .heart_movie .heart_movie-affiche {
+  height: 30px;
+  width: 30px;
+  border: solid #acacac 1px;
+  margin-right: 10px;
+}
+body .side_bar .heart_section .heart_movie .heart_movie-title {
+  color: #acacac;
+  font-family: Montserrat;
+  float: right;
+}
+body .side_bar .heart_section .plus {
+  color: white;
+  font-size: 6px;
+  float: right;
+  font-family: Montserrat;
+  margin-top: 20px;
+}
+body .side_bar .ajout_film {
+  display: flex;
+}
+body .side_bar .ajout_film .add {
+  background: linear-gradient(#fc4aff, #4037df);
+  height: 30px;
+  width: 30px;
+  color: white;
+}
+body .side_bar .ajout_film .add i {
+  position: relative;
+  left: 8px;
+  top: 6px;
+}
+body .side_bar .ajout_film p {
+  color: white;
+  font-family: Montserrat;
+  font-size: 10px;
+  margin-left: 10px;
 }
 body .form_login {
   border: solid 1px white;
@@ -103,14 +252,15 @@ body .form_login p {
   text-align: center;
 }
 body .form_login h2 {
-  font-family: bebas;
+  font-family: Montserrat;
   color: white;
   text-align: center;
 }
 body .form_login input[type=submit] {
-  background-color: #ffcc00;
-  border: none;
-  font-family: bebas;
+  background-color: transparent;
+  color: white;
+  border: solid 1px white;
+  font-family: Montserrat;
   margin: auto;
 }
 body .form_login .p2 {
@@ -122,9 +272,42 @@ body .form_login .p2 {
 body .form_login a {
   text-decoration: none;
   color: white;
-  font-family: bebas;
+  font-family: Montserrat;
   text-align: center;
-  border: solid;
+  font-size: 17px;
+  width: 300px;
+}
+
+.movies_contener {
+  display: flex;
+  flex-wrap: wrap;
+  height: 500px;
+  overflow: scroll;
+}
+.movies_contener .movie {
+  width: 200px;
+  margin: 10px;
+}
+.movies_contener .movie .affiche {
+  height: 120px;
+  background-color: white;
+  width: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.movies_contener .movie .title_eval {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.movies_contener .movie .title_eval .title {
+  color: white;
+  font-family: Montserrat;
+  font-size: 12px;
+}
+.movies_contener .movie .title_eval .evaluation i {
+  font-size: 8px;
+  color: #ffcc00;
 }
 
 /*# sourceMappingURL=home.css.map */

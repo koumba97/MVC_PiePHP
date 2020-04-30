@@ -1,0 +1,190 @@
+@font-face{
+    font-family: "cocogoose";
+    src: url("font/cocogoose.ttf");
+}
+
+@font-face{
+    font-family: "bebas";
+    src: url("font/BebasNeue-Regular.ttf");
+}
+
+@font-face {
+    font-family: "RoundedBold";
+    src: url("font/Rounded-Bold.otf") format ('truetype');
+}
+
+@font-face {
+   font-family: "Rounded-Light";
+   src: url("/font/Rounded-Light.otf");
+}
+
+.profil{
+
+    width: 100%;
+
+    .profil_background{
+        position: relative;
+        bottom: 20px;
+        right: 20px;
+        width: 105%;
+        height: 130px;
+        //background: linear-gradient(#fc4aff, #4037df);
+    }
+
+    .name{
+        color: white;
+        font-family: Montserrat;
+        font-size: 40px;
+        position: relative;
+        bottom: 20px;
+    }
+
+    .form_profil{
+        width: 100%;
+
+        color: white;
+        font-family: Montserrat;
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+        
+        .profil_picture{
+            height: 170px;
+            width: 150px;
+          
+            background-image: url('../assets/blank.png');
+            background-size: cover;
+            background-position: 50%;
+      
+        }
+
+        .section_form{
+
+
+            width: 70%;
+            position: relative;
+            //border: solid white;
+
+            .confirm{
+                //float: right;
+                //po
+            }
+
+            .password{
+                border-top: solid 1px white;
+                width: 320px;
+                margin-top: 40px;
+                p{
+                    line-height: 20px;
+                }
+    
+                input{
+                    float: right;
+                    border: none;
+                    height: 22px;
+                    width: 150px;
+                }
+                
+            }
+    
+        }        
+
+    }
+
+    .form_password{
+        color: white;
+        font-family: Montserrat;
+        font-size: 12px;
+
+        .password{
+            border-top: solid 1px white;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+
+            p{
+                line-height: 20px;
+            }
+
+            input{
+                //float: right;
+                border: none;
+                height: 22px;
+                width: 150px;
+            }
+            
+        }
+
+        
+
+      
+    }
+
+    .form_delete{
+
+        color: white;
+        font-family: Montserrat;
+        font-size: 12px;
+        .password{
+            border-top: solid 1px white;
+            width: 100%;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            p{
+                line-height: 20px;
+            }
+
+            input{
+                //float: right;
+                border: none;
+                height: 22px;
+                width: 150px;
+            }
+
+            .delete{
+                float: right;
+            }
+            
+        }
+      
+    }
+
+    .identity{
+        width: 320px;
+        p{
+            line-height: 20px;
+        }
+
+        input{
+            float: right;
+            border: none;
+            height: 22px;
+            width: 150px;
+        }
+        
+    }
+
+
+
+    .confirm{
+        background-color: yellowgreen;
+        padding: 7px;
+        border-radius: 20px;
+        color: white;
+        border: none;
+        position: relative;
+        left: 170px;
+        top: 10px;
+    }
+
+    .delete{
+        background-color: rgb(205, 50, 50);
+        padding: 7px;
+        border-radius: 20px;
+        color: white;
+        border: none;
+    }
+    
+}
