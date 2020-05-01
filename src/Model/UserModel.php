@@ -48,8 +48,8 @@ class userModel{
     
     public function update($update_email, $update_password, $id){
 
-        $data_update= $this->bdd->prepare("UPDATE user SET email=$update_email, password=$update_password WHERE id =$id");
-        $data_update->execute();
+        $data_update= $this->bdd->query("UPDATE user SET email=$update_email, password=$update_password WHERE id =$id");
+        //$data_update->execute();
 
     }
 

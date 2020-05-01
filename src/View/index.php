@@ -25,5 +25,7 @@
         </section>
 
         <script src="https://kit.fontawesome.com/9b58f0fd79.js" crossorigin="anonymous"></script>
+        <script src="../../MVC_PiePHP/webroot/js/jQuery.js"></script>
+        <script src="../../MVC_PiePHP/webroot/js/editMovie.js"></script>
     </body>
 </html>

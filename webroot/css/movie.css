@@ -30,6 +30,13 @@
   font-size: 30px;
   position: relative;
   top: 20px;
+  margin-bottom: 20px;
+}
+.details_movie .affiche-text .text .genre {
+  font-size: 8px;
+  line-height: 10px;
+  margin: 0px;
+  margin-bottom: 15px;
 }
 .details_movie .affiche-text .text .resum {
   font-size: 13px;
@@ -37,15 +44,127 @@
 .details_movie .affiche-text .text .voir {
   color: white;
   font-family: Montserrat;
-  font-size: 15px;
   text-align: center;
-  background: yellowgreen;
-  height: 20px;
-  width: 70px;
-  padding: 5px;
-  border-radius: 20px;
-  margin-top: 30px;
+  cursor: pointer;
+  font-size: 10px;
+  position: relative;
+  left: 250px;
   float: right;
+}
+.details_movie .affiche-text .text .edit {
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.fond {
+  display: none;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.568);
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.popup {
+  display: none;
+  z-index: 5;
+  background-color: white;
+  border-radius: 5px;
+  position: fixed;
+  left: 35%;
+  top: 15%;
+  width: 400px;
+  height: 440px;
+  overflow: unset;
+}
+.popup .popin-dismiss {
+  float: right;
+  font-size: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.popup .mini_bg {
+  margin-top: 40px;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent, #121212), url("https://www.slashgear.com/wp-content/uploads/2020/02/parasite_movie_main-1280x720.jpg");
+  background-size: cover;
+}
+.popup .mini_affiche {
+  background: url("https://fr.web.img6.acsta.net/pictures/20/02/12/13/58/3992754.jpg");
+  background-size: contain;
+  height: 220px;
+  width: 160px;
+  position: relative;
+  bottom: 50px;
+  left: 20px;
+  border: solid 2px white;
+}
+.popup .mini_title {
+  font-family: Montserrat;
+  position: relative;
+  top: 110px;
+  left: 200px;
+  font-size: 20px;
+  font-size: 700;
+  color: white;
+  width: 140px;
+  background-color: transparent;
+  border: none;
+}
+.popup .mini_genre {
+  font-family: Montserrat;
+  position: relative;
+  top: 100px;
+  left: 205px;
+  width: max-content;
+  font-size: 10px;
+  font-size: 700;
+  color: white;
+}
+.popup .mini_resum {
+  border: solid #e8e8e8 1px;
+  background-color: #e8e8e8;
+  height: 150px;
+  width: 170px;
+  position: relative;
+  left: 200px;
+  bottom: 210px;
+}
+.popup .genres {
+  position: relative;
+  bottom: 180px;
+  right: 160px;
+}
+.popup .boutons {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  position: relative;
+  left: 140px;
+  bottom: 15px;
+}
+.popup .boutons .ok {
+  border: none;
+  background: transparent;
+  position: relative;
+  left: 40px;
+  bottom: 180px;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 10px;
+}
+.popup .boutons .delete {
+  border: none;
+  background: transparent;
+  position: relative;
+  left: 40px;
+  bottom: 180px;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 10px;
 }
 
 /*# sourceMappingURL=movie.css.map */

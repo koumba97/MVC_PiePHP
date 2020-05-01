@@ -51,6 +51,7 @@ class movieModel{
                     
                     <div class="text">
                         <p class="title">'.$result['title'].'</p>
+                        <p class="genre">'.$result['genre'].'</p>
                         <div class="evaluation">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -59,21 +60,14 @@ class movieModel{
                             <i class="far fa-star"></i>
                         </div>
                         <p class="resum">
-                            Restabat ut Caesar post haec properaret 
-                            accitus et abstergendae causa suspicionis 
-                            sororem suam, eius uxorem, Constantius ad 
-                            se tandem desideratam venire multis 
-                            fictisque blanditiis hortabatur. quae 
-                            licet ambigeret metuens saepe cruentum, 
-                            spe tamen quod eum lenire poterit ut germanum 
-                            profecta, cum Bithyniam introisset, in 
-                            statione quae Caenos Gallicanos appellatur, 
-                            absumpta est vi febrium repentina. cuius 
-                            post obitum maritus contemplans cecidisse 
-                            fiduciam qua se fultum existimabat, 
-                            anxia cogitatione, quid moliretur haerebat.
+                            '.$result['resum'].'
                         </p>
-                        <div class="voir"><i class="fas fa-plus"></i> VOIR</div>
+
+                        <br>
+                        <div style="display:flex; justify-content:space-between;">
+                            <div class="voir"><i class="fas fa-plus"></i> VOIR</div>
+                            <div class="edit"><i class="far fa-edit"></i> MODIFIER</div>
+                        </div>
                     </div>
 
                 </section>
@@ -84,11 +78,14 @@ class movieModel{
     }
 
     
-    public function update($id_movie){
+    public function update($id_movie, $title, $resum, $genre){
+      
+        echo $resum;
 
-        // $data_update= $this->bdd->prepare("UPDATE user SET email=$update_email, password=$update_password WHERE id =$id");
-        // $data_update->execute();
 
+        //$resum = nl2br(htmlspecialchars ($resum,ENT_QUOTES));
+        $data_update= $this->bdd->query('UPDATE movie SET title="'. $title .'", resum="'. $resum .'", genre="'. $genre .'" WHERE id_movie='. $id_movie ) or die("failed");
+        header("location:movie$id_movie");
     }
 
 

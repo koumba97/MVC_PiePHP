@@ -37,7 +37,15 @@
                 font-size: 30px;
                 position: relative;
                 top: 20px;
+                margin-bottom: 20px;
     
+            }
+
+            .genre{
+                font-size: 8px;
+                line-height: 10px;
+                margin: 0px;
+                margin-bottom: 15px;
             }
             .resum{
                
@@ -46,21 +54,145 @@
             .voir{
                 color: white;
                 font-family: Montserrat;
-                font-size: 15px;
                 text-align: center;
-                //background: linear-gradient(rgb(221, 0, 255),  rgb(43, 32, 116));
-                background: yellowgreen;
-                height: 20px;
-                width: 70px;
-                padding: 5px;
-                border-radius: 20px;
-                margin-top: 30px;
+                cursor: pointer;
+                font-size: 10px;
+                position: relative;
+                left: 250px;
                 float: right;
-        
+            }
+
+            .edit{
+                cursor: pointer;
+                font-size: 10px;
             }
         }
     }
 
 
 }
+
+
+.fond{
+    display: none;
+    z-index: 2;
+    background-color:rgba(0, 0, 0, 0.568);
+    position: fixed; 
+    left: 30px;
+    bottom: 30px;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+}
     
+.popup{
+    display: none;
+
+    z-index: 5;
+    background-color:white;
+    border-radius:5px;
+    position: fixed; 
+    left: 35%;
+    top: 15%;
+    width: 400px;
+    height: 440px; 
+    overflow: unset;
+
+
+    .popin-dismiss{
+        float: right;
+        font-size: 30px;
+        margin-right: 10px;
+        cursor: pointer;
+
+    }
+    .mini_bg{
+        margin-top: 40px;
+        height: 160px;
+        background: linear-gradient(to bottom, transparent, rgb(18, 18, 18)),
+        url('https://www.slashgear.com/wp-content/uploads/2020/02/parasite_movie_main-1280x720.jpg');
+        background-size: cover;
+    }
+
+    .mini_affiche{
+        background: url('https://fr.web.img6.acsta.net/pictures/20/02/12/13/58/3992754.jpg');
+        background-size: contain;
+        height: 220px;
+        width: 160px;
+        position: relative;
+        bottom: 50px;
+        left: 20px;
+        border: solid 2px white;
+    }
+
+    .mini_title{
+        font-family: Montserrat;
+        position: relative;
+        top: 110px;
+        left: 200px;
+        font-size: 20px;
+        font-size: 700;
+        color: white;
+        width: 140px;
+        background-color: transparent;
+        border: none;
+    }
+
+    .mini_genre{
+        font-family: Montserrat;
+        position: relative;
+        top: 100px;
+        left: 205px;
+        width: max-content;
+        font-size: 10px;
+        font-size: 700;
+        color: white;
+    }
+
+    .mini_resum{
+        border: solid rgb(232, 232, 232) 1px;
+        background-color: rgb(232, 232, 232);
+        height: 150px;
+        width: 170px;
+        position: relative;
+        left: 200px;
+        bottom: 210px;
+    }
+
+    .genres{
+        position: relative;
+        bottom: 180px;
+        right: 160px;
+    }
+
+    .boutons{
+        display:flex; 
+        justify-content:space-between;
+        width: 200px;
+        position: relative;
+        left: 140px;
+        bottom: 15px;
+        .ok{
+            border: none;
+            background: transparent;
+            position: relative;
+            left: 40px;
+            bottom: 180px;
+            font-family: Montserrat;
+            font-weight: 700;
+            font-size: 10px;
+        }
+    
+        .delete{
+            border: none;
+            background: transparent;
+            position: relative;
+            left: 40px;
+            bottom: 180px;
+            font-family: Montserrat;
+            font-weight: 700;
+            font-size: 10px;
+        }
+    }
+  
+}

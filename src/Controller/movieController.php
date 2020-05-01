@@ -16,9 +16,19 @@ class movieController extends Controller{
         }
 
 
-        $user = new Model\movieModel();
-        $user->read($id_movie);
+        $movie = new Model\movieModel();
+        $movie->read($id_movie);
         $this->render("details");
+    }
+
+    public function updateAction(){
+        $id_movie = $_POST['id_movie'];
+        $title = $_POST['title'];
+        $resum = $_POST['resum'];
+        $genre = $_POST['genre'];
+
+        $movie = new Model\movieModel();
+        $movie->update($id_movie, $title, $resum, $genre);
     }
 }
 ?>

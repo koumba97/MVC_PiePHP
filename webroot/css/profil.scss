@@ -51,11 +51,22 @@
         .profil_picture{
             height: 170px;
             width: 150px;
-          
             background-image: url('../assets/blank.png');
             background-size: cover;
             background-position: 50%;
       
+        }
+
+        .confirm{
+            background-color: yellowgreen;
+            padding: 7px;
+            border-radius: 20px;
+            color: white;
+            border: none;
+            font-size: 8px;
+            position: relative;
+            left: 200px;
+            top: 10px;
         }
 
         .section_form{
@@ -101,19 +112,28 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+          
             margin-top: 40px;
 
             p{
                 line-height: 20px;
             }
 
-            input{
-                //float: right;
-                border: none;
-                height: 22px;
-                width: 150px;
-            }
+           
             
+        }  
+        
+        
+        .confirm{
+            background-color: yellowgreen;
+            float: right;
+            padding: 7px;
+            border-radius: 20px;
+            font-size: 8px;
+            color: white;
+            border: none;
+            //margin-right: 20px;
+            width: max-content;
         }
 
         
@@ -131,6 +151,7 @@
             width: 100%;
             margin-top: 40px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             p{
                 line-height: 20px;
@@ -168,16 +189,7 @@
 
 
 
-    .confirm{
-        background-color: yellowgreen;
-        padding: 7px;
-        border-radius: 20px;
-        color: white;
-        border: none;
-        position: relative;
-        left: 170px;
-        top: 10px;
-    }
+   
 
     .delete{
         background-color: rgb(205, 50, 50);
@@ -185,6 +197,8 @@
         border-radius: 20px;
         color: white;
         border: none;
+        float: right;
+        font-size: 8px;
     }
     
 }

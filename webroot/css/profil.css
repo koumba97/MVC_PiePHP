@@ -46,6 +46,17 @@
   background-size: cover;
   background-position: 50%;
 }
+.profil .form_profil .confirm {
+  background-color: yellowgreen;
+  padding: 7px;
+  border-radius: 20px;
+  color: white;
+  border: none;
+  font-size: 8px;
+  position: relative;
+  left: 200px;
+  top: 10px;
+}
 .profil .form_profil .section_form {
   width: 70%;
   position: relative;
@@ -79,10 +90,15 @@
 .profil .form_password .password p {
   line-height: 20px;
 }
-.profil .form_password .password input {
+.profil .form_password .confirm {
+  background-color: yellowgreen;
+  float: right;
+  padding: 7px;
+  border-radius: 20px;
+  font-size: 8px;
+  color: white;
   border: none;
-  height: 22px;
-  width: 150px;
+  width: max-content;
 }
 .profil .form_delete {
   color: white;
@@ -94,6 +110,7 @@
   width: 100%;
   margin-top: 40px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .profil .form_delete .password p {
@@ -119,22 +136,14 @@
   height: 22px;
   width: 150px;
 }
-.profil .confirm {
-  background-color: yellowgreen;
-  padding: 7px;
-  border-radius: 20px;
-  color: white;
-  border: none;
-  position: relative;
-  left: 170px;
-  top: 10px;
-}
 .profil .delete {
   background-color: #cd3232;
   padding: 7px;
   border-radius: 20px;
   color: white;
   border: none;
+  float: right;
+  font-size: 8px;
 }
 
 /*# sourceMappingURL=profil.css.map */
