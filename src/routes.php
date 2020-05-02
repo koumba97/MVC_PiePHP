@@ -18,6 +18,12 @@ elseif(substr($url_params[2], 0, 11)=="updateGenre"){
 elseif(substr($url_params[2], 0, 11)=="deleteGenre"){
     $id_genre_delete=substr($url_params[2], 11);
 }
+elseif(substr($url_params[2], 0, 13)=="addHistorique"){
+    $id_historique_add=substr($url_params[2], 13);
+}
+elseif(substr($url_params[2], 0, 16)=="deleteHistorique"){
+    $id_historique_delete=substr($url_params[2], 16);
+}
 
 // APP
 Router::connect('/', ['controller' => 'app', 'action' => 'index']);
@@ -26,13 +32,13 @@ Router::connect('/genres', ['controller' => 'app', 'action' => 'genres']);
 
 
 // USER
-Router::connect('/add', ['controller' => 'user', 'action' => 'add']);
+Router::connect('/userAdd', ['controller' => 'user', 'action' => 'add']);
 Router::connect('/register', ['controller' => 'user', 'action' => 'register']);
 Router::connect('/login', ['controller' => 'user', 'action' => 'login']);
 Router::connect('/logout', ['controller' => 'user', 'action' => 'logout']);
-Router::connect('/profil', ['controller' => 'user', 'action' => 'show']);
+Router::connect('/profilEdit', ['controller' => 'user', 'action' => 'edit']);
 Router::connect('/updateProfil', ['controller' => 'user', 'action' => 'update']);
-
+Router::connect("/profil", ['controller' => 'app', 'action' => 'show']);
 
 
 // MOVIE
@@ -56,4 +62,14 @@ if(isset($id_genre_update)){
 }
 if(isset($id_genre_delete)){   
     Router::connect("/deleteGenre$id_genre_delete", ['controller' => 'genre', 'action' => 'delete']);
+}
+
+
+
+// HISTORIQUE
+if(isset($id_historique_add)){
+    Router::connect("/addHistorique$id_historique_add", ['controller' => 'historique', 'action' => 'add']);
+}
+if(isset($id_historique_delete)){
+    Router::connect("/deleteHistorique$id_historique_delete", ['controller' => 'historique', 'action' => 'delete']);
 }

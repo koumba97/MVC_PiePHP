@@ -27,6 +27,13 @@ class movieModel{
         $select_data = $this->bdd->query("SELECT * FROM movie WHERE id_movie=$id_movie");
         while($result = $select_data->fetch()){
 
+            $url_params = explode(DIRECTORY_SEPARATOR, $_SERVER['REQUEST_URI']);
+
+            if(substr($url_params[2], 0, 5)=="movie"){
+                $id_movie=substr($url_params[2], 5);
+            }
+
+
             $_SESSION['details_movie']=
             '<section class="details_movie">
     
@@ -52,8 +59,8 @@ class movieModel{
 
                         <br>
                         <div style="display:flex; justify-content:space-between;">
-                            <div class="voir"><i class="fas fa-plus"></i> VOIR</div>
-                            <div class="edit"><i class="far fa-edit"></i> MODIFIER</div>
+                            <a href="addHistorique'.$id_movie.'"class="voir"><i class="fas fa-plus"></i> VOIR</a>
+                            <a class="edit"><i class="far fa-edit"></i> MODIFIER</div>
                         </div>
                     </div>
 
@@ -62,11 +69,7 @@ class movieModel{
             </section>';
 
 
-            $url_params = explode(DIRECTORY_SEPARATOR, $_SERVER['REQUEST_URI']);
-
-            if(substr($url_params[2], 0, 5)=="movie"){
-                $id_movie=substr($url_params[2], 5);
-            }
+     
           
 
             $_SESSION['edit_movie']=
@@ -149,5 +152,27 @@ class movieModel{
             '<option value="'.$result['genre'].'">'.$result['genre'].'</option>';
         }
 
+    }
+
+
+    public function last_movie(){
+
+        $_SESSION['last_movie']="";
+        $select_data = $this->bdd->query("SELECT * FROM movie ORDER BY id_movie DESC LIMIT 10");
+        while($result = $select_data->fetch()){
+            $_SESSION['last_movie'].=
+            
+            
+            '<a href="movie'.$result['id_movie'].'">'.
+            '<section class="movie">' .
+                '<div class="affiche" style="background-image:url(\''. $result['background'] .'\');"></div>'.
+            
+                '<div class="title_eval">
+                    <p class="title">'.$result['title'].'</p>
+                </div>
+            
+            </section>
+            </a>';
+        }
     }
 }

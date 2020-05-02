@@ -195,7 +195,7 @@ body{
 
             .last_movie{
                 display: flex;
-                justify-content: space-between;
+                //justify-content: space-between;
                 align-items: center;
                 margin-top: 10px;
 
@@ -209,8 +209,9 @@ body{
 
                 .last_movie-title{
                     color: rgb(172, 172, 172);
+                    font-size: 10px;
                     font-family: Montserrat;
-                    float: right;
+                    //float: right;
                 }
             }
 

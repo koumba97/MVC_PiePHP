@@ -1,4 +1,4 @@
-<form method="POST" action="" class="form_login">
+<form method="POST" action="userAdd" class="form_login">
     <h2>Inscription</h2>
     <p>nom : <input type="text" name="name"></p>
     <p>prenom : <input type="text" name="surname"></p>

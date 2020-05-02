@@ -21,7 +21,14 @@ class userController extends Controller{
     }
 
     public function addAction(){
-        echo "hey ! voici le contenu de la méthode addAction" . PHP_EOL;
+        $email=$_POST['email'];
+        $password=sha1($_POST['password']);
+        $name=$_POST['name'];
+        $surname=$_POST['surname'];
+
+        $params = array("email"=>$email, "password"=>$password, "name"=>$name, "surname"=>$surname);
+        $user = new Model\userModel('user', $params);
+        $user->save($email, $password, $name, $surname);
     }
 
     public function registerAction(){
@@ -100,10 +107,10 @@ class userController extends Controller{
     }
 
 
-    public function showAction() {
+    public function editAction() {
         $id=$_SESSION['id'];
         //echo " ID de l' utilisateur a afficher : $id " . PHP_EOL ;
-        $this->render("profil");
+        $this->render("edit_profil");
     }
 
     public function updateAction(){

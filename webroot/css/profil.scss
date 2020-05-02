@@ -51,6 +51,7 @@
         .profil_picture{
             height: 170px;
             width: 150px;
+            border-radius: 20px;
             background-image: url('../assets/blank.png');
             background-size: cover;
             background-position: 50%;
@@ -201,4 +202,183 @@
         font-size: 8px;
     }
     
+}
+
+
+.profil_histo_section{
+    height: 500px;
+    display: flex;
+
+    .profil_section{
+        width: 50%;
+
+        .identity{
+            display: flex;
+            font-family: Montserrat;
+            color: white;
+                
+            .name{
+                margin: 0px;
+                margin-left: 10px;
+                font-size: 30px;
+            }
+
+            .date{
+                margin-left: 10px;
+                font-size: 12px;
+            }
+
+            .nbr_movie{
+                margin-left: 10px;
+                font-size: 12px;
+            }
+
+            .button{
+                background-color: transparent;
+                margin-left: 10px;
+                color: rgb(172, 172, 172);
+                border-radius: 5px;
+                padding: 10px;
+                width: 130px;
+                height: 15px;
+                font-family: Montserrat;
+                font-size: 12px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                padding-right: 15px;
+                transition-duration: 1s;
+    
+                &:hover{
+                    background-color: rgb(65, 65, 65);
+                }
+    
+                i{
+                    float: right;
+                    color: rgb(172, 172, 172);
+                }
+            }
+            
+            .profil_picture{
+                width: 150px;
+                height: 150px;
+                //border: solid white;
+                border-radius: 20px;
+                background-image: url('../assets/blank.png');
+                background-size: cover;
+            }
+        }
+
+        .titre{
+            color: white;
+            font-family: Montserrat;
+            margin-top: 40px;
+        }
+        .derniers_films{
+            height: 250px;
+            margin-top: 20px;
+            overflow: scroll;
+            border-top: solid white 1px;
+
+            .movie{
+                //width: 200px;
+                margin: 10px;
+                display: flex;
+
+                .affiche{
+                    height: 100px;
+                    background-color: white;
+                    
+                    width: 150px;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+            
+                }
+            
+                .title_eval{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .title{
+                        color: white;
+                        font-family: Montserrat;
+                        font-size: 15px;
+                        margin-left: 20px;
+                    }
+                
+                    .evaluation{
+                        i{
+                            font-size: 8px;
+                            //color:$yellow;
+                        }
+                    }
+                }
+            
+            }
+            
+        }
+    }
+
+    .histo_section{
+        //border: solid white;
+        width: 50%;
+        padding-left: 70px;
+
+        .titre{
+            color: white;
+            font-family: Montserrat;
+            //margin-top: 40px;
+        }
+
+        .histo{
+
+            overflow: scroll;
+            height: 450px;
+
+            .last_movie{
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+             
+                transition-duration: 1s;
+                &:hover{
+                    background-color: rgba(125, 125, 125, 0.331);
+                }
+
+                .last_movie-affiche{
+                    height: 50px;
+                    width: 50px;
+                    border: solid rgb(172, 172, 172) 1px;
+                    margin-right: 10px;
+                }
+
+                .text{
+                    width: 100%;
+
+                  
+        
+                    .last_movie-title{
+                        color: white;
+                        font-size: 14px;
+                        font-family: Montserrat;
+                        //float: right;
+                    }
+    
+                    .date{
+                        color: rgb(172, 172, 172);
+                        font-size: 10px;
+                        font-family: Montserrat;
+                        //float: right;
+                        margin-top: 10px;
+                    }
+    
+                    .delete{
+                        color: red;
+                        font-size: 10px;
+                        font-family: Montserrat;
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
 }

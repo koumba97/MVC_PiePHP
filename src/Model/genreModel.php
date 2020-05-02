@@ -38,7 +38,7 @@ class genreModel{
         while($result = $select_data->fetch()){
             array_push($result_genres, 
             "<div class='genre' onclick='editGenre(". $result['id_genre'] .", \"". $result['genre'] ."\", \"". $result['image'] ."\", \"".$result['resum']."\")'
-             style='background:linear-gradient(to bottom, transparent, rgb(18, 18, 18)), url(\"". $result['image'] ."\"); background-size:cover;'><h3>". $result['genre'] ."</h3></div>");
+            style='background:linear-gradient(to bottom, transparent, rgb(18, 18, 18)), url(\"". $result['image'] ."\"); background-size:cover;'><h3>". $result['genre'] ."</h3></div>");
         }
 
         return $result_genres;

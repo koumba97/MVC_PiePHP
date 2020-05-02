@@ -13,8 +13,25 @@ class appController extends Controller{
         //$user = new Model\userModel('movie', $params);
         $movie = new Model\movieModel();
         $movie->read_all();
+
+        if(isset($_SESSION['id'])){
+
+            $movie = new Model\historiqueModel();
+            $movie->read();
+        }
         
         $this->render("home");
+    }
+
+    public function showAction(){
+
+        $movie = new Model\movieModel();
+        $movie->last_movie();
+
+        $historique = new Model\historiqueModel();
+        $historique->read_all();
+
+        $this->render("historique");
     }
 
     public function genresAction(){

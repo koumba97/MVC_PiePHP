@@ -42,6 +42,7 @@
 .profil .form_profil .profil_picture {
   height: 170px;
   width: 150px;
+  border-radius: 20px;
   background-image: url("../assets/blank.png");
   background-size: cover;
   background-position: 50%;
@@ -144,6 +145,144 @@
   border: none;
   float: right;
   font-size: 8px;
+}
+
+.profil_histo_section {
+  height: 500px;
+  display: flex;
+}
+.profil_histo_section .profil_section {
+  width: 50%;
+}
+.profil_histo_section .profil_section .identity {
+  display: flex;
+  font-family: Montserrat;
+  color: white;
+}
+.profil_histo_section .profil_section .identity .name {
+  margin: 0px;
+  margin-left: 10px;
+  font-size: 30px;
+}
+.profil_histo_section .profil_section .identity .date {
+  margin-left: 10px;
+  font-size: 12px;
+}
+.profil_histo_section .profil_section .identity .nbr_movie {
+  margin-left: 10px;
+  font-size: 12px;
+}
+.profil_histo_section .profil_section .identity .button {
+  background-color: transparent;
+  margin-left: 10px;
+  color: #acacac;
+  border-radius: 5px;
+  padding: 10px;
+  width: 130px;
+  height: 15px;
+  font-family: Montserrat;
+  font-size: 12px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-right: 15px;
+  transition-duration: 1s;
+}
+.profil_histo_section .profil_section .identity .button:hover {
+  background-color: #414141;
+}
+.profil_histo_section .profil_section .identity .button i {
+  float: right;
+  color: #acacac;
+}
+.profil_histo_section .profil_section .identity .profil_picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  background-image: url("../assets/blank.png");
+  background-size: cover;
+}
+.profil_histo_section .profil_section .titre {
+  color: white;
+  font-family: Montserrat;
+  margin-top: 40px;
+}
+.profil_histo_section .profil_section .derniers_films {
+  height: 250px;
+  margin-top: 20px;
+  overflow: scroll;
+  border-top: solid white 1px;
+}
+.profil_histo_section .profil_section .derniers_films .movie {
+  margin: 10px;
+  display: flex;
+}
+.profil_histo_section .profil_section .derniers_films .movie .affiche {
+  height: 100px;
+  background-color: white;
+  width: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.profil_histo_section .profil_section .derniers_films .movie .title_eval {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profil_histo_section .profil_section .derniers_films .movie .title_eval .title {
+  color: white;
+  font-family: Montserrat;
+  font-size: 15px;
+  margin-left: 20px;
+}
+.profil_histo_section .profil_section .derniers_films .movie .title_eval .evaluation i {
+  font-size: 8px;
+}
+.profil_histo_section .histo_section {
+  width: 50%;
+  padding-left: 70px;
+}
+.profil_histo_section .histo_section .titre {
+  color: white;
+  font-family: Montserrat;
+}
+.profil_histo_section .histo_section .histo {
+  overflow: scroll;
+  height: 450px;
+}
+.profil_histo_section .histo_section .histo .last_movie {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  transition-duration: 1s;
+}
+.profil_histo_section .histo_section .histo .last_movie:hover {
+  background-color: rgba(125, 125, 125, 0.331);
+}
+.profil_histo_section .histo_section .histo .last_movie .last_movie-affiche {
+  height: 50px;
+  width: 50px;
+  border: solid #acacac 1px;
+  margin-right: 10px;
+}
+.profil_histo_section .histo_section .histo .last_movie .text {
+  width: 100%;
+}
+.profil_histo_section .histo_section .histo .last_movie .text .last_movie-title {
+  color: white;
+  font-size: 14px;
+  font-family: Montserrat;
+}
+.profil_histo_section .histo_section .histo .last_movie .text .date {
+  color: #acacac;
+  font-size: 10px;
+  font-family: Montserrat;
+  margin-top: 10px;
+}
+.profil_histo_section .histo_section .histo .last_movie .text .delete {
+  color: red;
+  font-size: 10px;
+  font-family: Montserrat;
+  float: right;
 }
 
 /*# sourceMappingURL=profil.css.map */

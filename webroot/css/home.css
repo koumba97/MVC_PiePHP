@@ -159,7 +159,6 @@ body .side_bar .historique_section h5 {
 }
 body .side_bar .historique_section .last_movie {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-top: 10px;
 }
@@ -171,8 +170,8 @@ body .side_bar .historique_section .last_movie .last_movie-affiche {
 }
 body .side_bar .historique_section .last_movie .last_movie-title {
   color: #acacac;
+  font-size: 10px;
   font-family: Montserrat;
-  float: right;
 }
 body .side_bar .historique_section .plus {
   color: white;

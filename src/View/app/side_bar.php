@@ -32,7 +32,7 @@
             <section class="historique_section">
                 <h5>HISTORIQUE</h5>
 
-                <div class="last_movie">
+                <!-- <div class="last_movie">
                     <div class="last_movie-affiche"></div>
                     <div class="last_movie-title">Titre ici</div>
                 </div>
@@ -45,9 +45,10 @@
                 <div class="last_movie">
                     <div class="last_movie-affiche"></div>
                     <div class="last_movie-title">Titre ici</div>
-                </div>
+                </div> -->
+                <?php echo $_SESSION['historique'];?>
 
-                <span class="plus">VOIR PLUS ></span>
+                <a href="historique" class="plus">VOIR PLUS ></a>
             </section>
 
             <div class="ajout_film">
