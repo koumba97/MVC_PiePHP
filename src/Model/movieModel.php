@@ -14,33 +14,20 @@ class movieModel{
         //$this->params=$params;
         $this->bdd = new \PDO('mysql:host=localhost;dbname=Pie_PHP;charset=utf8', 'root', 'root');
     }
-    public function save(){
+    public function save($title, $genre, $resum, $affiche, $bg){
         
-        // $email=$this->params['email'];
-        // $password=sha1($this->params['password']);
-        // $name=$this->params['name'];
-        // $surname=$this->params['surname'];
+        $this->bdd->exec("INSERT INTO movie (title, genre, resum, affiche, background) 
+        VALUES('".$title."', '".$genre."', '".$resum."', '".$affiche."', '".$bg."') ") or die("failed");
 
-        // $this->data = $this->bdd->query("SELECT * FROM user WHERE email = '" . $email . "'");
-        // if ($this->data->fetchColumn() > 0){
-        //     return "veuillez saisir une autre adresse email";
-        // }
-        // else{
-
-        //     $this->bdd->exec("INSERT INTO user (id, email, password, name, surname) 
-        //     VALUES(0, '".$email."', '".$password."', '".$name."', '".$surname."') ") or die("failed");
-    
-        //     return "inscription réalisée avec succès";
-        // }
-
+        header("location:index");
     }
 
     public function read($id_movie){
         $_SESSION['details_movie']="";
         $select_data = $this->bdd->query("SELECT * FROM movie WHERE id_movie=$id_movie");
         while($result = $select_data->fetch()){
-            //echo $email=$result['title'];
-            $_SESSION['details_movie'].=
+
+            $_SESSION['details_movie']=
             '<section class="details_movie">
     
                 <section class="background" style="background: linear-gradient(to bottom, transparent, rgb(18, 18, 18)), url(\''. $result['background'] .'\'), linear-gradient(to bottom, transparent, rgb(18, 18, 18)); background-repeat: no-repeat; background-size: cover;"></section>
@@ -73,6 +60,39 @@ class movieModel{
                 </section>
             
             </section>';
+
+
+            $url_params = explode(DIRECTORY_SEPARATOR, $_SERVER['REQUEST_URI']);
+
+            if(substr($url_params[2], 0, 5)=="movie"){
+                $id_movie=substr($url_params[2], 5);
+            }
+          
+
+            $_SESSION['edit_movie']=
+            '<div class="fond"></div>
+
+            <form class="popup" method="POST" action="../MVC_PiePHP/updateMovie'. $id_movie.'">
+                <div><div class="popin-dismiss">&times;</div></div>
+                <div class="mini_bg" style="background: linear-gradient(to bottom, transparent, rgb(18, 18, 18)), url(\''. $result['background'] .'\'), linear-gradient(to bottom, transparent, rgb(18, 18, 18)); background-repeat: no-repeat; background-size: cover;">
+                    <input type="text" class="mini_title" name="title" value="'.$result['title'].'" required="required"/>
+                    <p class="mini_genre">'.$result['genre'].'</p>
+                </div>
+                <div class="mini_affiche" style="background-image:url(\''. $result['affiche'] .'\');"></div>
+                
+                <textarea class="mini_resum" name="resum" required="required">'.$result['resum'].'</textarea>
+            
+                <select class="genres" name="genre">
+                    '.$_SESSION['genre_list'].'
+                </select>
+                
+                <div class="boutons">
+                    <a href="deleteMovie'.$id_movie.'"><div class="delete">SUPPRIMER</div></a>
+                    <input class="ok" type="submit" value= "VALIDER"/>
+                </div> 
+
+                <input type="hidden" name="id_movie" value="'.$id_movie.'"/>
+            </form>';
         }
 
     }
@@ -91,8 +111,8 @@ class movieModel{
 
     public function delete($id_movie){
 
-        //$this->bdd->exec("DELETE FROM 'user' WHERE id=$id"); 
-        
+        $this->bdd->exec("DELETE FROM movie WHERE id_movie=$id_movie"); 
+        header("location:index");
     }
 
     public function read_all(){
@@ -102,7 +122,7 @@ class movieModel{
         while($result = $select_data->fetch()){
             $_SESSION['result_home'].=
             
-            //'<a href="movie">'.
+            
             '<a href="movie'.$result['id_movie'].'">'.
             '<section class="movie">' .
             '<div class="affiche" style="background-image:url(\''. $result['background'] .'\');"></div>'.
@@ -121,5 +141,13 @@ class movieModel{
             </section>
             </a>';
         }
+
+        $_SESSION['genre_list']="";
+        $select_data = $this->bdd->query("SELECT * FROM genres");
+        while($result = $select_data->fetch()){
+            $_SESSION['genre_list'].=
+            '<option value="'.$result['genre'].'">'.$result['genre'].'</option>';
+        }
+
     }
 }

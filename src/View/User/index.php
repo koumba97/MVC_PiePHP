@@ -19,22 +19,7 @@
     
 
     <body>
-<!-- 
-       
-        <pre>
-            POST
-            <?php //print_r($_POST); ?>
-        </pre>
 
-        <pre>
-            GET
-            <?php //print_r($_GET); ?>
-        </pre>
-
-        <pre>  
-            SERVER
-            <?php //print_r($_SERVER); ?>
-        </pre> -->
     </body>
 
 </html>

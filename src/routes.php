@@ -12,15 +12,26 @@ elseif(substr($url_params[2], 0, 11)=="updateMovie"){
 elseif(substr($url_params[2], 0, 11)=="deleteMovie"){
     $id_movie_delete=substr($url_params[2], 11);
 }
+
+
+// APP
 Router::connect('/', ['controller' => 'app', 'action' => 'index']);
+Router::connect('/genres', ['controller' => 'app', 'action' => 'genres']);
+
+
+
+// USER
 Router::connect('/add', ['controller' => 'user', 'action' => 'add']);
 Router::connect('/register', ['controller' => 'user', 'action' => 'register']);
 Router::connect('/login', ['controller' => 'user', 'action' => 'login']);
 Router::connect('/logout', ['controller' => 'user', 'action' => 'logout']);
 Router::connect('/profil', ['controller' => 'user', 'action' => 'show']);
-
 Router::connect('/updateProfil', ['controller' => 'user', 'action' => 'update']);
 
+
+
+// MOVIE
+Router::connect("/addMovie", ['controller' => 'movie', 'action' => 'add']);
 if(isset($id_movie)){
     Router::connect("/movie$id_movie", ['controller' => 'movie', 'action' => 'show']);
 }
@@ -30,3 +41,8 @@ if(isset($id_movie_update)){
 if(isset($id_movie_delete)){
     Router::connect("/deleteMovie$id_movie_delete", ['controller' => 'movie', 'action' => 'delete']);
 }
+
+
+
+// GENRE
+Router::connect("/addGenre", ['controller' => 'genre', 'action' => 'add']);

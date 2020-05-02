@@ -16,9 +16,11 @@ class Controller{
        
         if(file_exists($f)){
             ob_start();
+            $result=$scope;
             include($f);
+            
             $view=ob_get_clean();
-
+            
             ob_start();
             include(implode(DIRECTORY_SEPARATOR, [dirname(__DIR__), 'src', 'View', 'index']) . '.php');
             self::$_render=ob_get_clean();

@@ -4,21 +4,10 @@ session_start();
 use \Core\Controller;
 use \Core\Request;
 
-class movieController extends Controller{
+class genreController extends Controller{
 
     public function showAction() {
 
-        $url_params = explode(DIRECTORY_SEPARATOR, $_SERVER['REQUEST_URI']);
-
-        if(substr($url_params[2], 0, 5)=="movie"){
-
-            $id_movie=substr($url_params[2], 5);
-        }
-
-
-        $movie = new Model\movieModel();
-        $movie->read($id_movie);
-        $this->render("details");
     }
 
     public function updateAction(){
@@ -42,15 +31,12 @@ class movieController extends Controller{
 
     public function addAction(){
 
-        echo "yesss";
-        echo $title = $_POST['title'];
-        echo $genre = $_POST['genre'];
-        echo $resum = $_POST['resum'];
-        echo $affiche = $_POST['affiche'];
-        echo $bg = $_POST['background'];
+        $name = $_POST['name'];
+        $resum = $_POST['resum'];
+        $image = $_POST['image'];
 
-        $movie = new Model\movieModel();
-        $movie->save($title, $genre, $resum, $affiche, $bg);
+        $movie = new Model\genreModel();
+        $movie->save($name, $image, $resum);
     }
 }
 ?>

@@ -1,3 +1,5 @@
+
+
 <section class="side_bar">
     <a class="logo" href="../MVC_PiePHP/index">
         <h4>My Cinema</h4>
@@ -21,9 +23,11 @@
         }
     ?>
 
-    <div class="sidebar_link">Genres <i class="fas fa-bookmark"></i></div>
+    <a href="../MVC_PiePHP/genres">
+        <div class="sidebar_link">Genres <i class="fas fa-bookmark"></i></div>
+    </a>
 
-        <?php
+    <?php
         if(isset($_SESSION['surname'])){?>
             <section class="historique_section">
                 <h5>HISTORIQUE</h5>
@@ -54,21 +58,36 @@
         
         
             <?php
-        }?>
+        }
+    ?>
 
-    <!-- <section class="heart_section">
-        <h5>COUP DE </h5>
-
-        <div class="heart_movie">
-            <div class="heart_movie-affiche"></div>
-            <div class="heart_movie-title">Titre ici</div>
-        </div>
-
-        <div class="heart_movie">
-            <div class="heart_movie-affiche"></div>
-            <div class="heart_movie-title">Titre ici</div>
-        </div>
-
-        <span class="plus">VOIR PLUS ></span>
-    </section> -->
+        
 </section>
+
+
+<div class="fond_add"></div>
+
+<form class="popup_add" method="POST" action="../MVC_PiePHP/addMovie">
+    <div><div class="popin-dismiss">&times;</div></div>
+    <div class="mini_bg_add" style="background: linear-gradient(to bottom, transparent, rgb(18, 18, 18)), url(\''. $result['background'] .'\'), linear-gradient(to bottom, transparent, rgb(18, 18, 18)); background-repeat: no-repeat; background-size: cover;">
+        <input type="text" class="mini_title" name="title" value="Titre du film" required="required"/>
+    </div>
+    <div class="mini_affiche_add" style="background-image:url(\''. $result['affiche'] .'\');"></div>
+    
+    <textarea class="mini_resum" name="resum" required="required">Résumé du film</textarea>
+
+    <select class="genres" name="genre">
+        <?php echo $_SESSION['genre_list']; ?>
+    </select>
+
+    <div class="pictures">
+        <p>Couverture<input type="text" name="background" id="background"/></p>
+        <p>Affiche<input type="text" name="affiche" id="affiche"/></p>
+    </div>
+
+    <div class="boutons">
+        <input class="ok_add" type="submit" value= "VALIDER"/>
+    </div> 
+
+    <input type="hidden" name="id_movie" value="'.$id_movie.'"/>
+</form>

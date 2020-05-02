@@ -310,4 +310,135 @@ body .form_login a {
   color: #ffcc00;
 }
 
+.ajout_film {
+  cursor: pointer;
+}
+
+.fond_add {
+  display: none;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.568);
+  position: fixed;
+  left: 30px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.popup_add {
+  display: none;
+  z-index: 5;
+  background-color: white;
+  border-radius: 5px;
+  position: fixed;
+  left: 10%;
+  top: 15%;
+  width: 600px;
+  height: 440px;
+  overflow: unset;
+}
+.popup_add .popin-dismiss {
+  float: right;
+  font-size: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.popup_add .mini_bg_add {
+  margin-top: 40px;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent, #121212), url("https://image.freepik.com/free-vector/colorful-abstract-wallpaper-design_23-2148467625.jpg");
+  background-size: cover;
+}
+.popup_add .mini_affiche_add {
+  background: whitesmoke;
+  background-size: contain;
+  height: 220px;
+  width: 160px;
+  position: relative;
+  bottom: 50px;
+  left: 20px;
+  border: solid 2px white;
+}
+.popup_add .mini_title {
+  font-family: Montserrat;
+  position: relative;
+  top: 110px;
+  left: 200px;
+  font-size: 20px;
+  font-size: 700;
+  color: white;
+  width: 140px;
+  background-color: transparent;
+  border: none;
+}
+.popup_add .mini_genre {
+  font-family: Montserrat;
+  position: relative;
+  top: 100px;
+  left: 205px;
+  width: max-content;
+  font-size: 10px;
+  font-size: 700;
+  color: white;
+}
+.popup_add .mini_resum {
+  border: solid #e8e8e8 1px;
+  background-color: #e8e8e8;
+  height: 150px;
+  width: 370px;
+  position: relative;
+  left: 200px;
+  bottom: 210px;
+}
+.popup_add .genres {
+  position: relative;
+  bottom: 390px;
+  right: 180px;
+}
+.popup_add .pictures {
+  position: relative;
+  bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 400px;
+}
+.popup_add .pictures p {
+  margin: 0px;
+  font-size: 10px;
+  font-family: Montserrat;
+}
+.popup_add .pictures input {
+  float: right;
+  width: 300px;
+}
+.popup_add .boutons {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  position: relative;
+  left: 140px;
+  bottom: 15px;
+}
+.popup_add .boutons .ok_add {
+  border: none;
+  background: transparent;
+  position: relative;
+  left: 380px;
+  bottom: 200px;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 10px;
+}
+.popup_add .boutons .delete {
+  border: none;
+  background: transparent;
+  position: relative;
+  left: 40px;
+  bottom: 180px;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 10px;
+}
+
 /*# sourceMappingURL=home.css.map */

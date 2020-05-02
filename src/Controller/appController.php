@@ -11,9 +11,18 @@ class appController extends Controller{
     public function indexAction(){
         $params="";
         //$user = new Model\userModel('movie', $params);
-        $user = new Model\movieModel();
-        $user->read_all();
+        $movie = new Model\movieModel();
+        $movie->read_all();
+        
         $this->render("home");
     }
 
+    public function genresAction(){
+        $genre = new Model\genreModel();
+        $genre->read_all();
+
+        $result= $genre->read_all();
+    
+        $this->render("genres", $result);
+    }
 }
