@@ -390,3 +390,157 @@
     }
 }
   
+
+
+
+.popup_genre_edit{
+
+    .fond_edit_genre{
+        display: none;
+        z-index: 2;
+        background-color:rgba(0, 0, 0, 0.568);
+        position: fixed; 
+        left: 10px;
+        bottom: 0px;
+        width: 100%;
+        height: 100%; 
+        overflow: auto;
+    }
+
+
+    .popup_edit_genre{
+        display: none;
+        z-index: 5;
+        background-color:white;
+        border-radius:5px;
+        position: fixed; 
+        left: 30%;
+        margin: auto;
+        top: 15%;
+        width: 400px;
+        height: 440px; 
+        overflow: unset;
+
+
+        .popin-dismiss{
+            float: right;
+            font-size: 30px;
+            margin-right: 10px;
+            cursor: pointer;
+    
+        }
+        .mini_bg_edit{
+            margin-top: 40px;
+            height: 160px;
+            background: linear-gradient(to bottom, transparent, rgb(18, 18, 18)),
+            url('https://image.freepik.com/free-vector/colorful-abstract-wallpaper-design_23-2148467625.jpg');
+            background-size: cover;
+        }
+    
+        .mini_affiche_edit_genre{
+            //background: url('https://fr.web.img6.acsta.net/pictures/20/02/12/13/58/3992754.jpg');
+            background: whitesmoke;
+            background-size: contain;
+            height: 220px;
+            width: 160px;
+            position: relative;
+            bottom: 50px;
+            left: 20px;
+            border: solid 2px white;
+        }
+    
+        .mini_title{
+            font-family: Montserrat;
+            position: relative;
+            top: 110px;
+            left: 200px;
+            font-size: 20px;
+            //border: solid white;
+            font-size: 700;
+            color: white;
+            width: 140px;
+            background-color: transparent;
+            border: none;
+        }
+    
+        .mini_genre{
+            font-family: Montserrat;
+            position: relative;
+            top: 100px;
+            left: 205px;
+            width: max-content;
+            font-size: 10px;
+            font-size: 700;
+            color: white;
+        }
+    
+        .mini_resum_edit{
+            border: solid rgb(232, 232, 232) 1px;
+            background-color: rgb(232, 232, 232);
+            height: 150px;
+            width: 180px;
+            position: relative;
+            left: 200px;
+            bottom: 210px;
+        }
+    
+        .genres{
+            position: relative;
+            bottom: 390px;
+            right: 180px;
+        }
+    
+        .pictures{
+            position: relative;
+            bottom: 200px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+            width: 370px;
+            p{
+                margin: 0px;
+                font-size: 10px;
+                font-family: Montserrat;
+            }
+    
+            input{
+                //float: right;
+                width: 310px;
+                margin-left: 10px;
+            }
+        }
+    
+        .boutons{
+            display:flex; 
+            border: solid black;
+            justify-content:space-between;
+            width: 100px;
+            position: relative;
+            left: 170px;
+     
+            top: 10px;
+            .ok_add{
+                border: none;
+                background: transparent;
+                position: relative;
+                left: 80px;
+                bottom: 200px;
+
+                font-family: Montserrat;
+                font-weight: 700;
+                font-size: 10px;
+            }
+        
+            .delete{
+                border: none;
+                background: transparent;
+                position: relative;
+                left: 40px;
+                bottom: 200px;
+                font-family: Montserrat;
+                font-weight: 700;
+                font-size: 10px;
+            }
+        }
+    }
+}

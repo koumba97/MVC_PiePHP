@@ -12,7 +12,12 @@ elseif(substr($url_params[2], 0, 11)=="updateMovie"){
 elseif(substr($url_params[2], 0, 11)=="deleteMovie"){
     $id_movie_delete=substr($url_params[2], 11);
 }
-
+elseif(substr($url_params[2], 0, 11)=="updateGenre"){
+    $id_genre_update=substr($url_params[2], 11);
+}
+elseif(substr($url_params[2], 0, 11)=="deleteGenre"){
+    $id_genre_delete=substr($url_params[2], 11);
+}
 
 // APP
 Router::connect('/', ['controller' => 'app', 'action' => 'index']);
@@ -46,3 +51,9 @@ if(isset($id_movie_delete)){
 
 // GENRE
 Router::connect("/addGenre", ['controller' => 'genre', 'action' => 'add']);
+if(isset($id_genre_update)){   
+    Router::connect("/updateGenre$id_genre_update", ['controller' => 'genre', 'action' => 'update']);
+}
+if(isset($id_genre_delete)){   
+    Router::connect("/deleteGenre$id_genre_delete", ['controller' => 'genre', 'action' => 'delete']);
+}

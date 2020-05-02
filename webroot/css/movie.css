@@ -328,4 +328,133 @@
   font-size: 10px;
 }
 
+.popup_genre_edit .fond_edit_genre {
+  display: none;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.568);
+  position: fixed;
+  left: 10px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.popup_genre_edit .popup_edit_genre {
+  display: none;
+  z-index: 5;
+  background-color: white;
+  border-radius: 5px;
+  position: fixed;
+  left: 30%;
+  margin: auto;
+  top: 15%;
+  width: 400px;
+  height: 440px;
+  overflow: unset;
+}
+.popup_genre_edit .popup_edit_genre .popin-dismiss {
+  float: right;
+  font-size: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.popup_genre_edit .popup_edit_genre .mini_bg_edit {
+  margin-top: 40px;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent, #121212), url("https://image.freepik.com/free-vector/colorful-abstract-wallpaper-design_23-2148467625.jpg");
+  background-size: cover;
+}
+.popup_genre_edit .popup_edit_genre .mini_affiche_edit_genre {
+  background: whitesmoke;
+  background-size: contain;
+  height: 220px;
+  width: 160px;
+  position: relative;
+  bottom: 50px;
+  left: 20px;
+  border: solid 2px white;
+}
+.popup_genre_edit .popup_edit_genre .mini_title {
+  font-family: Montserrat;
+  position: relative;
+  top: 110px;
+  left: 200px;
+  font-size: 20px;
+  font-size: 700;
+  color: white;
+  width: 140px;
+  background-color: transparent;
+  border: none;
+}
+.popup_genre_edit .popup_edit_genre .mini_genre {
+  font-family: Montserrat;
+  position: relative;
+  top: 100px;
+  left: 205px;
+  width: max-content;
+  font-size: 10px;
+  font-size: 700;
+  color: white;
+}
+.popup_genre_edit .popup_edit_genre .mini_resum_edit {
+  border: solid #e8e8e8 1px;
+  background-color: #e8e8e8;
+  height: 150px;
+  width: 180px;
+  position: relative;
+  left: 200px;
+  bottom: 210px;
+}
+.popup_genre_edit .popup_edit_genre .genres {
+  position: relative;
+  bottom: 390px;
+  right: 180px;
+}
+.popup_genre_edit .popup_edit_genre .pictures {
+  position: relative;
+  bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 370px;
+}
+.popup_genre_edit .popup_edit_genre .pictures p {
+  margin: 0px;
+  font-size: 10px;
+  font-family: Montserrat;
+}
+.popup_genre_edit .popup_edit_genre .pictures input {
+  width: 310px;
+  margin-left: 10px;
+}
+.popup_genre_edit .popup_edit_genre .boutons {
+  display: flex;
+  border: solid black;
+  justify-content: space-between;
+  width: 100px;
+  position: relative;
+  left: 170px;
+  top: 10px;
+}
+.popup_genre_edit .popup_edit_genre .boutons .ok_add {
+  border: none;
+  background: transparent;
+  position: relative;
+  left: 80px;
+  bottom: 200px;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 10px;
+}
+.popup_genre_edit .popup_edit_genre .boutons .delete {
+  border: none;
+  background: transparent;
+  position: relative;
+  left: 40px;
+  bottom: 200px;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 10px;
+}
+
 /*# sourceMappingURL=movie.css.map */

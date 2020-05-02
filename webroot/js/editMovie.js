@@ -70,3 +70,30 @@ $('.fond_add').click(function(e){
     $('.popup_add_genre').fadeOut(500);
     $('.fond_add').fadeOut(500);
 });
+
+
+
+// EDIT GENRE
+
+function editGenre(id_genre, genre, image, resum){
+
+    $('#inputName').val(genre);
+    $('.mini_affiche_edit_genre')[0].style.background= "url('"+ image +"')";
+    $('.mini_affiche_edit_genre')[0].style.backgroundSize= "cover";
+    $('.mini_affiche_edit_genre')[0].style.backgroundRepeat= "no-repeat";
+
+    $('.id_genre').val(id_genre);
+
+    $('.mini_resum_edit').val(resum);
+
+    $('.popup_edit_genre').attr('action','../MVC_PiePHP/updateGenre'+id_genre);
+    $('.delete_link').attr('href', 'deleteGenre'+id_genre);
+    $('.popup_edit_genre').fadeIn(500);
+    $('.fond_edit_genre').fadeIn(500);
+}
+
+
+$('.fond_edit_genre').click(function(e){
+    $('.popup_edit_genre').fadeOut(500);
+    $('.fond_edit_genre').fadeOut(500);
+});

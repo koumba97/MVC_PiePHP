@@ -11,22 +11,21 @@ class genreController extends Controller{
     }
 
     public function updateAction(){
-        $id_movie = $_POST['id_movie'];
-        $title = $_POST['title'];
-        $resum = $_POST['resum'];
-        $genre = $_POST['genre'];
+        $id_genre = $_POST['id_genre'];
+        $name = $_POST['name'];
+        $resum = $_POST['resum_edit'];
 
-        $movie = new Model\movieModel();
-        $movie->update($id_movie, $title, $resum, $genre);
+        $genre = new Model\genreModel();
+        $genre->update($id_genre, $name, $resum);
     }
 
     public function deleteAction(){
 
         $url_params = explode(DIRECTORY_SEPARATOR, $_SERVER['REQUEST_URI']);
-        $id_movie_delete=substr($url_params[2], 11);
+        $id_genre_delete=substr($url_params[2], 11);
 
-        $movie = new Model\movieModel();
-        $movie->delete($id_movie_delete);
+        $genre = new Model\genreModel();
+        $genre->delete($id_genre_delete);
     }
 
     public function addAction(){
