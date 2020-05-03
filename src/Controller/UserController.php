@@ -48,12 +48,8 @@ class userController extends Controller{
             
             $params = $this->request->getQueryParams();
             $user = new Model\userModel('user', $params);
-            
-            //if(!$user->id){
 
-                $user->save();
-            //}
-            //self::$_render = " Votre compte a ete cree ." . PHP_EOL ;
+            $user->save();
              
             
         }
@@ -62,37 +58,17 @@ class userController extends Controller{
     public function loginAction() {
 
         $this->render("login");
+         
+        if(isset($_POST['email']) && isset($_POST['password'])){
 
-        if (isset($_POST['email']) && isset($_POST['password'])){
-            
             $email=$_POST['email'];
             $password=sha1($_POST['password']);
-
-            $login = $this->bdd->query("SELECT * FROM user WHERE email='$email'");
-            foreach($login as $content){
-                $password_check=$content['password'];
-                $id=$content['id'];
-                $email=$content['email'];
-                $name=$content['name'];
-                $surname=$content['surname'];
-            }
-
-            if($password==$password_check){
-                
-                $_SESSION['id']=$id;
-                $_SESSION['email']=$email;
-                $_SESSION['name']=$name;
-                $_SESSION['surname']=$surname;
-                header('location:profil');
-            }
-
-            else{
-            ?><script>alert("Mot de passe incorrect");</script><?php
-            }
-
-
+    
+            $user = new Model\userModel();
+            $user->read($email, $password);
         }
 
+            
        
     }
 
@@ -109,7 +85,7 @@ class userController extends Controller{
 
     public function editAction() {
         $id=$_SESSION['id'];
-        //echo " ID de l' utilisateur a afficher : $id " . PHP_EOL ;
+;
         $this->render("edit_profil");
     }
 

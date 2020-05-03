@@ -10,14 +10,13 @@ class userModel{
     private $data;
     
 
-    public function __construct($params)
+    public function __construct()
     {   
-        $this->params=$params;
         $this->bdd = new \PDO('mysql:host=localhost;dbname=Pie_PHP;charset=utf8', 'root', 'root');
     }
     public function save($email, $password, $name, $surname){
 
-        echo "ok";
+     
         $this->data = $this->bdd->query("SELECT * FROM user WHERE email = '" . $email . "'");
         if ($this->data->fetchColumn() > 0){
             return "veuillez saisir une autre adresse email";
@@ -26,11 +25,6 @@ class userModel{
 
             $this->bdd->exec("INSERT INTO user(id, email, password, name, surname) 
             VALUES(0, '".$email."', '".$password."', '".$name."', '".$surname."') ") or die("failed");
-    
-            // $_SESSION['id']=$id;
-            // $_SESSION['email']=$email;
-            // $_SESSION['name']=$name;
-            // $_SESSION['surname']=$surname;
            
             header('location:login');
         }
@@ -38,12 +32,29 @@ class userModel{
 
     }
 
-    public function read($id){
-        
-        $select_data = $this->bdd->query("SELECT * FROM user WHERE id=$id");
-        while($result = $select_data->fetch()){
-            echo $id=$result['id'] . " " . $email=$result['email'] . " " . $password=$result['password'];
-        }
+    public function read($email, $password){
+
+        $login = $this->bdd->query("SELECT * FROM user WHERE email='$email'");
+            foreach($login as $content){
+                $password_check=$content['password'];
+                echo $id=$content['id'];
+                echo $email=$content['email'];
+                $name=$content['name'];
+                $surname=$content['surname'];
+            }
+
+            if($password==$password_check){
+                
+                $_SESSION['id']=$id;
+                $_SESSION['email']=$email;
+                $_SESSION['name']=$name;
+                $_SESSION['surname']=$surname;
+                header('location:profil');
+            }
+
+            else{
+            ?><script>alert("Mot de passe incorrect");</script><?php
+            }
 
     }
 

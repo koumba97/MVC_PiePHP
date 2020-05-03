@@ -46,7 +46,7 @@
                     <div class="last_movie-affiche"></div>
                     <div class="last_movie-title">Titre ici</div>
                 </div> -->
-                <?php echo $_SESSION['historique'];?>
+                <?php if(isset($_SESSION['historique'])){echo $_SESSION['historique'];}?>
 
                 <a href="historique" class="plus">VOIR PLUS ></a>
             </section>

@@ -30,8 +30,9 @@ class appController extends Controller{
 
         $historique = new Model\historiqueModel();
         $historique->read_all();
-
-        $this->render("historique");
+        
+        $this->render("profil");
+        
     }
 
     public function genresAction(){
